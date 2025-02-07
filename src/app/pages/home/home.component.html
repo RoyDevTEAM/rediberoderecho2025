@@ -140,37 +140,48 @@
         </div>
       </div>
   
-      <!-- Acordeón de Agenda -->
-      <div class="mt-8 bg-white shadow-md rounded-md">
-        <button (click)="agendaAbierta = !agendaAbierta" 
-          class="w-full text-left px-4 py-3 flex justify-between items-center font-bold text-lg bg-gray-200">
-          Agenda del Congreso
-          <i class="fas" [ngClass]="agendaAbierta ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
-        </button>
-        <div *ngIf="agendaAbierta" class="p-4">
-          <table class="min-w-full table-auto bg-white shadow-md rounded-md">
-            <thead class="bg-[#003366] text-white">
-              <tr>
-                <th class="py-2 px-4">Hora</th>
-                <th class="py-2 px-4">Actividad</th>
-                <th class="py-2 px-4">Lugar</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let evento of agenda">
-                <td class="py-2 px-4">{{ evento.hora }}</td>
-                <td class="py-2 px-4">{{ evento.actividad }}</td>
-                <td class="py-2 px-4">{{ evento.lugar }}</td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="mt-4">
-            <a href="assets/agenda-congreso-2025.pdf" download="Agenda-Congreso-2025.pdf" class="bg-[#003366] text-white py-2 px-4 rounded-md hover:bg-[#C9A227]">
-              Descargar Agenda en PDF
-            </a>
-          </div>
-        </div>
+   <!-- Acordeón de la Agenda -->
+<div class="mt-8 bg-white shadow-md rounded-md">
+    <button (click)="agendaAbierta = !agendaAbierta" 
+      class="w-full text-left px-4 py-3 flex justify-between items-center font-bold text-lg bg-gray-200">
+      Agenda del Congreso
+      <i class="fas" [ngClass]="agendaAbierta ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+    </button>
+  
+    <div *ngIf="agendaAbierta" class="p-4">
+      <!-- Contenedor con scroll horizontal en móvil -->
+      <div class="overflow-x-auto">
+        <table class="min-w-full table-auto bg-white shadow-md rounded-md border border-gray-300">
+          <thead class="bg-[#003366] text-white">
+            <tr>
+              <th class="py-2 px-4">Día</th>
+              <th class="py-2 px-4">Hora</th>
+              <th class="py-2 px-4">Actividad</th>
+              <th class="py-2 px-4">Lugar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let evento of agenda" class="border-b border-gray-300">
+              <td class="py-2 px-4 text-center">{{ evento.dia }}</td>
+              <td class="py-2 px-4 text-center">{{ evento.hora }}</td>
+              <td class="py-2 px-4">{{ evento.actividad }}</td>
+              <td class="py-2 px-4 text-center">{{ evento.lugar }}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
+  
+      <!-- Botón para descargar PDF -->
+      <div class="mt-4 text-center">
+        <a href="assets/agenda.pdf" download="Agenda-Congreso-2025.pdf" 
+          class="bg-[#003366] text-white py-2 px-4 rounded-md hover:bg-[#C9A227]">
+          <i class="fas fa-download"></i> Descargar Agenda en PDF
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  
     </div>
   </section>
   
