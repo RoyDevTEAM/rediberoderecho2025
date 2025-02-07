@@ -1,0 +1,43 @@
+<header class="bg-[#003366] text-white fixed w-full top-0 z-50 shadow-lg">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <!-- Logo -->
+      <a href="#" class="text-2xl font-bold flex items-center space-x-2">
+        <img src="https://www.upds.edu.bo/wp-content/uploads/2020/06/logo_trans-1.png" alt="Logo" class="h-10">
+        <span>Red Iberoamericana</span>
+      </a>
+  
+      <!-- Menú para escritorio -->
+      <nav class="hidden md:flex space-x-6">
+        <a href="#about" class="hover:text-[#C9A227] transition">Nosotros</a>
+        <a href="#events" class="hover:text-[#C9A227] transition">Eventos</a>
+        <a href="#register" class="hover:text-[#C9A227] transition">Inscripción</a>
+        <a href="#contact" class="hover:text-[#C9A227] transition">Contacto</a>
+      </nav>
+  
+      <!-- Botón de menú móvil -->
+      <button class="lg:hidden text-white text-2xl focus:outline-none" (click)="toggleSidebar()">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    
+    <!-- Sidebar para móviles -->
+    <div *ngIf="sidebarOpen" class="fixed inset-0 bg-black bg-opacity-50 z-40" (click)="toggleSidebar()"></div>
+    
+    <!-- Sidebar -->
+    <aside [class.show]="sidebarOpen"
+      class="fixed top-0 left-0 h-full w-64 bg-[#003366] text-white transform transition-transform duration-300 ease-in-out z-50 p-6"
+      [ngClass]="{ '-translate-x-full': !sidebarOpen, 'translate-x-0': sidebarOpen }">
+      
+      <button class="text-white text-2xl absolute top-4 right-4" (click)="toggleSidebar()">
+        <i class="fas fa-times"></i>
+      </button>
+  
+      <nav class="mt-10 space-y-4 text-lg">
+        <a href="#about" class="block hover:text-[#C9A227]" (click)="toggleSidebar()">Nosotros</a>
+        <a href="#events" class="block hover:text-[#C9A227]" (click)="toggleSidebar()">Eventos</a>
+        <a href="#register" class="block hover:text-[#C9A227]" (click)="toggleSidebar()">Inscripción</a>
+        <a href="#contact" class="block hover:text-[#C9A227]" (click)="toggleSidebar()">Contacto</a>
+      </nav>
+    </aside>
+  </header>
+  

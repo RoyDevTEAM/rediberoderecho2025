@@ -1,0 +1,50 @@
+/* Efecto Parallax */
+.parallax-bg {
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    transform: translateZ(0);
+    /* Aumentamos la visibilidad del parallax */
+    will-change: transform;
+  }
+  
+  /* Animación fade-in */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .hero-container {
+    animation: fadeIn 2s ease-out;
+  }
+  
+  /* Para evitar que la imagen de fondo se corte y se solape con el header */
+  #hero {
+    background-position: top center; /* Esto evita que la imagen se corte */
+    min-height: 100vh; /* Asegura que cubra todo el alto de la pantalla */
+    position: relative;
+  }
+  
+  /* Asegura que el contenido esté correctamente posicionado dentro del hero */
+  #hero .relative {
+    z-index: 10; /* Para que el contenido esté encima de la capa negra */
+  }
+  
+  /* Corregir la superposición del header */
+  .app-header {
+    z-index: 20; /* Eleva el header para evitar la superposición */
+  }
+  
+  /* Se puede agregar un pequeño efecto en la imagen parallax */
+  @media (min-width: 768px) {
+    .parallax-bg {
+      background-position: center center;
+      background-attachment: fixed;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
