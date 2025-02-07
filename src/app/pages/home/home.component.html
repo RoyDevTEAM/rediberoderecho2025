@@ -10,7 +10,7 @@
         <p class="text-lg md:text-2xl mb-6 animate__animated animate__fadeIn animate__delay-1s">Un espacio de aprendizaje y colaboración para estudiantes y profesionales del Derecho en Iberoamérica.</p>
   
         <div class="flex justify-center space-x-4 animate__animated animate__fadeIn animate__delay-2s">
-          <a href="#info" class="bg-[#C9A227] text-white py-2 px-6 rounded-md hover:bg-[#A68D1F] transition">Más Información</a>
+          <a href="#mas-informacion" class="bg-[#C9A227] text-white py-2 px-6 rounded-md hover:bg-[#A68D1F] transition">Más Información</a>
           <a href="#register" class="bg-transparent border-2 border-white text-white py-2 px-6 rounded-md hover:bg-white hover:text-[#003366] transition">Inscripción</a>
         </div>
       </div>
@@ -89,6 +89,86 @@
             marginwidth="0">
             Cargando…
           </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="mas-informacion" class="py-20 bg-gray-100">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Más Información</h2>
+  
+         <!-- Acordeón de Hoteles -->
+    <div class="space-y-4">
+        <div class="bg-white shadow-md rounded-md">
+          <button (click)="hotelesAbierto = !hotelesAbierto"
+            class="w-full text-left px-4 py-3 flex justify-between items-center font-bold text-lg bg-gray-200">
+            Lugares para Hospedarse
+            <i class="fas" [ngClass]="hotelesAbierto ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+          </button>
+          <div *ngIf="hotelesAbierto" class="p-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div *ngFor="let hotel of hoteles" class="bg-white shadow-lg p-4 rounded-md">
+                <img [src]="hotel.imagen" [alt]="hotel.nombre" class="w-full h-40 object-cover rounded-md mb-3">
+                <h3 class="font-bold text-lg">{{ hotel.nombre }}</h3>
+                <p>{{ hotel.descripcion }}</p>
+                <a [routerLink]="hotel.detallesLink"
+                  class="text-[#003366] font-semibold hover:text-[#C9A227]">Ver más</a>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Acordeón de Restaurantes -->
+        <div class="bg-white shadow-md rounded-md">
+          <button (click)="restaurantesAbierto = !restaurantesAbierto"
+            class="w-full text-left px-4 py-3 flex justify-between items-center font-bold text-lg bg-gray-200">
+            Restaurantes Recomendados
+            <i class="fas" [ngClass]="restaurantesAbierto ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+          </button>
+          <div *ngIf="restaurantesAbierto" class="p-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div *ngFor="let restaurant of restaurantes" class="bg-white shadow-lg p-4 rounded-md">
+                <img [src]="restaurant.imagen" [alt]="restaurant.nombre" class="w-full h-40 object-cover rounded-md mb-3">
+                <h3 class="font-bold text-lg">{{ restaurant.nombre }}</h3>
+                <p>{{ restaurant.descripcion }}</p>
+                <a [routerLink]="restaurant.detallesLink"
+                  class="text-[#003366] font-semibold hover:text-[#C9A227]">Ver más</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Acordeón de Agenda -->
+      <div class="mt-8 bg-white shadow-md rounded-md">
+        <button (click)="agendaAbierta = !agendaAbierta" 
+          class="w-full text-left px-4 py-3 flex justify-between items-center font-bold text-lg bg-gray-200">
+          Agenda del Congreso
+          <i class="fas" [ngClass]="agendaAbierta ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+        </button>
+        <div *ngIf="agendaAbierta" class="p-4">
+          <table class="min-w-full table-auto bg-white shadow-md rounded-md">
+            <thead class="bg-[#003366] text-white">
+              <tr>
+                <th class="py-2 px-4">Hora</th>
+                <th class="py-2 px-4">Actividad</th>
+                <th class="py-2 px-4">Lugar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let evento of agenda">
+                <td class="py-2 px-4">{{ evento.hora }}</td>
+                <td class="py-2 px-4">{{ evento.actividad }}</td>
+                <td class="py-2 px-4">{{ evento.lugar }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="mt-4">
+            <a href="assets/agenda-congreso-2025.pdf" download="Agenda-Congreso-2025.pdf" class="bg-[#003366] text-white py-2 px-4 rounded-md hover:bg-[#C9A227]">
+              Descargar Agenda en PDF
+            </a>
+          </div>
         </div>
       </div>
     </div>
