@@ -1,25 +1,26 @@
 <app-header></app-header>
 
-<div class="flex flex-col md:flex-row items-center justify-center min-h-screen bg-gray-100 p-6 mt-10">
+<div class="flex flex-col-reverse md:flex-row items-center justify-center min-h-screen bg-gray-100 p-6 mt-10 gap-6">
+  <!-- Sección del banner -->
+  <div class="w-full md:w-1/2 p-4 flex justify-center">
+    <img src="assets/portada.jpg" alt="Banner del Congreso" class="w-full max-w-lg rounded-lg shadow-md">
+  </div>
+
   <!-- Sección del formulario -->
   <div class="w-full md:w-1/2 p-4">
     <h2 class="text-2xl font-bold text-center mb-4">Registro al Congreso</h2>
-    <div class="relative w-full max-w-lg mx-auto bg-white shadow-lg p-6 rounded-md">
+    <div class="relative w-full max-w-xl mx-auto bg-white shadow-lg p-6 rounded-md">
       <iframe 
         src="https://docs.google.com/forms/d/e/1FAIpQLSd4zxtsLnIdWjNPTVyvh1EH9zIBtBApJ_AZpfjMg1CWkkSJ7A/viewform?embedded=true" 
         width="100%" 
         height="600" 
+        class="w-full"
         frameborder="0" 
         marginheight="0" 
         marginwidth="0">
         Cargando…
       </iframe>
     </div>
-  </div>
-
-  <!-- Sección del banner -->
-  <div class="w-full md:w-1/2 p-4 flex justify-center">
-    <img src="assets/portada.jpg" alt="Banner del Congreso" class="w-full max-w-lg rounded-lg shadow-md">
   </div>
 </div>
 
