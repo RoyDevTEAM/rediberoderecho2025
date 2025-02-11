@@ -37,31 +37,35 @@
     </div>
   </section>
   
-  <section id="events" class="py-20 bg-[#F9F9F9]" data-aos="fade-up">
+  <section id="agenda" class="py-20 bg-[#F9F9F9]" data-aos="fade-up">
     <div class="container mx-auto px-6 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-6">Eventos Destacados</h2>
-      <p class="text-lg mb-12 text-gray-700">Conoce los eventos más importantes de la Red Iberoamericana de Derecho.</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Agenda del Encuentro</h2>
+      <p class="text-lg mb-12 text-gray-700">Conoce el cronograma de actividades del evento.</p>
   
-      <!-- Timeline de eventos -->
-      <div class="timeline relative">
-        <div *ngFor="let event of events; let i = index" [attr.data-aos]="'fade-up'" [attr.data-aos-delay]="(i + 1) * 100">
-          <div class="timeline-item flex justify-between items-center mb-12">
-            <div class="timeline-content flex items-center bg-white p-6 rounded-lg shadow-lg w-full sm:w-10/12 md:w-8/12 mx-auto hover:shadow-xl transition">
-              <!-- Icono o fecha -->
-              <div class="timeline-icon bg-[#C9A227] text-white rounded-full h-16 w-16 flex items-center justify-center mr-6">
-                <span class="text-2xl">{{ event.date | date: 'dd' }}</span>
-              </div>
-              <div class="flex-1">
-                <h3 class="text-2xl font-semibold mb-3">{{ event.title }}</h3>
-                <p class="text-gray-600">{{ event.description }}</p>
-                <a href="#register" class="mt-4 inline-block text-[#003366] hover:text-[#C9A227] transition">Inscribirse</a>
-              </div>
-            </div>
+      <!-- Grid de la agenda -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div *ngFor="let item of agenda; let i = index" 
+             [attr.data-aos]="'fade-up'" 
+             [attr.data-aos-delay]="(i + 1) * 100" 
+             class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition flex flex-col items-center">
+  
+          <!-- Icono de la actividad -->
+          <div class="bg-[#C9A227] text-white rounded-full h-16 w-16 flex items-center justify-center mb-4">
+            <i [ngClass]="getIconoActividad(item.actividad)" class="text-2xl"></i>
           </div>
+  
+          <!-- Contenido -->
+          <h3 class="text-xl font-semibold mb-2">{{ item.actividad }}</h3>
+          <p class="text-gray-600">
+            📅 <strong>{{ item.dia }}</strong> | ⏰ {{ item.hora }} | 📍 {{ item.lugar }}
+          </p>
         </div>
       </div>
+  
     </div>
   </section>
+  
+  
   <section id="register" class="py-20 bg-white" data-aos="fade-up">
     <div class="container mx-auto px-6 text-center">
       <!-- Título -->

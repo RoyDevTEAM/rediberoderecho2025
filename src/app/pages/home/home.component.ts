@@ -76,4 +76,16 @@ agendaAbierta: boolean = false;
 toggleForm() {
   this.formVisible = !this.formVisible;
 }
+getIconoActividad(actividad: string): string {
+  if (actividad.includes('Conferencia')) return 'fas fa-chalkboard-teacher';
+  if (actividad.includes('Ponencias')) return 'fas fa-microphone-alt';
+  if (actividad.includes('Coffee Break')) return 'fas fa-coffee';
+  if (actividad.includes('Inauguración')) return 'fas fa-door-open';
+  if (actividad.includes('Almuerzo')) return 'fas fa-utensils';
+  if (actividad.includes('Movilización')) return 'fas fa-bus';
+  if (actividad.includes('Reunión')) return 'fas fa-users';
+  if (actividad.includes('Exposición')) return 'fas fa-book-open';
+  return 'fas fa-calendar-alt'; // Ícono por defecto
+}
+
 }
