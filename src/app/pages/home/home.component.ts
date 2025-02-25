@@ -1,6 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { HotelsService } from '../../services/hoteles.service';
 
 @Component({
   selector: 'app-home',
@@ -8,11 +9,29 @@ import 'aos/dist/aos.css';
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit {
+
+
+
+  constructor(private hotelsService: HotelsService) {}
+
+ 
 hotelesAbierto: boolean = false;
 restaurantesAbierto: boolean = false;
 agendaAbierta: boolean = false;
-  formVisible = false; // Variable para controlar la visibilidad del formulario
+formVisible = false; // Variable para controlar la visibilidad del formulario
+hotelis: any[] = [];
+currentSlide = 0;
+modalVisible = false;
 
+modalData: any = {
+  name: '',
+  location: '',
+  image: '',
+  rating: 0,
+  rooms: [],
+  amenities: [],
+  policies: []
+}
   events = [
     {
       title: 'Seminario sobre Derecho Internacional',
@@ -71,7 +90,10 @@ agendaAbierta: boolean = false;
   
   ngOnInit(): void {
     AOS.init({ duration: 1200 }); // Inicializamos AOS
+    this.hotelis = this.hotelsService.getHotels();
+
   }
+  
 // Método para alternar la visibilidad del formulario
 toggleForm() {
   this.formVisible = !this.formVisible;
@@ -87,5 +109,19 @@ getIconoActividad(actividad: string): string {
   if (actividad.includes('Exposición')) return 'fas fa-book-open';
   return 'fas fa-calendar-alt'; // Ícono por defecto
 }
+nextSlide(): void {
+  this.currentSlide = (this.currentSlide + 1) % this.hoteles.length;
+}
 
+prevSlide(): void {
+  this.currentSlide = (this.currentSlide - 1 + this.hoteles.length) % this.hoteles.length;
+}
+openModal(hotel: any): void {
+  this.modalData = { ...hotel };
+  this.modalVisible = true;
+}
+
+closeModal(): void {
+  this.modalVisible = false;
+}
 }
