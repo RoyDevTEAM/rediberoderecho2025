@@ -9,6 +9,7 @@ import { HotelsService } from '../../services/hoteles.service';
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit {
+  policiesArray: [string, string][] = []; // Declara la variable para almacenar las políticas
 
 
 
@@ -22,6 +23,7 @@ formVisible = false; // Variable para controlar la visibilidad del formulario
 hotelis: any[] = [];
 currentSlide = 0;
 modalVisible = false;
+hoteles: any[] = [];
 
 modalData: any = {
   name: '',
@@ -72,13 +74,7 @@ modalData: any = {
     { dia: '10 de Mayo', hora: '06:00', actividad: 'Movilización a Samaipata', lugar: 'UPDS' }
   ];
   
-  hoteles = [
-    { nombre: 'Hotel Camino Real', descripcion: 'Ubicado en una zona exclusiva, con todas las comodidades.', detallesLink: '/hotel/camino-real', imagen: 'assets/images/hotel-camino-real.jpg' },
-    { nombre: 'Hotel Los Tajibos', descripcion: 'Hotel de lujo con piscina y centro de convenciones.', detallesLink: '/hotel/los-tajibos', imagen: 'assets/images/hotel-los-tajibos.jpg' },
-    { nombre: 'Hotel Marriott Santa Cruz', descripcion: 'Perfecto para estadías de negocios y turismo.', detallesLink: '/hotel/marriott', imagen: 'assets/images/hotel-marriott.jpg' },
-    { nombre: 'Hotel Radisson', descripcion: 'Alojamiento premium con restaurantes y spa.', detallesLink: '/hotel/radisson', imagen: 'assets/images/hotel-radisson.jpg' },
-    { nombre: 'Hotel Buganvillas', descripcion: 'Hotel resort con áreas recreativas y de descanso.', detallesLink: '/hotel/buganvillas', imagen: 'assets/images/hotel-buganvillas.jpg' }
-  ];
+  
   
   restaurantes = [
     { nombre: 'Jardín de Asia', descripcion: 'Cocina asiática de alta calidad con ingredientes locales.', detallesLink: '/restaurante/jardin-asia', imagen: 'assets/images/restaurante-jardin-asia.jpg' },
@@ -91,6 +87,8 @@ modalData: any = {
   ngOnInit(): void {
     AOS.init({ duration: 1200 }); // Inicializamos AOS
     this.hotelis = this.hotelsService.getHotels();
+    this.hoteles = this.hotelsService.getHotels();
+
 
   }
   
@@ -110,16 +108,30 @@ getIconoActividad(actividad: string): string {
   return 'fas fa-calendar-alt'; // Ícono por defecto
 }
 nextSlide(): void {
-  this.currentSlide = (this.currentSlide + 1) % this.hoteles.length;
+  this.currentSlide = (this.currentSlide + 1) % this.hotelis.length;
 }
 
 prevSlide(): void {
-  this.currentSlide = (this.currentSlide - 1 + this.hoteles.length) % this.hoteles.length;
+  this.currentSlide = (this.currentSlide - 1 + this.hotelis.length) % this.hotelis.length;
 }
 openModal(hotel: any): void {
-  this.modalData = { ...hotel };
-  this.modalVisible = true;
+
+  if (hotel) {
+    this.modalData = {
+      name: hotel.name || '',
+      location: hotel.location || '',
+      rating: hotel.rating || 0,
+      rooms: Array.isArray(hotel.rooms) ? hotel.rooms : [], // ✅ Validamos que sea un array
+      amenities: Array.isArray(hotel.amenities) ? hotel.amenities : [],
+      policies: typeof hotel.policies === 'object' ? hotel.policies : {} // ✅ Validamos que sea un objeto
+
+    };
+    this.policiesArray = Object.entries(this.modalData.policies);
+
+    this.modalVisible = true;
+  }
 }
+
 
 closeModal(): void {
   this.modalVisible = false;

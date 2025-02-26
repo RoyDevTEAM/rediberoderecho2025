@@ -125,45 +125,53 @@
 </section>
 
 <!-- Modal Mejorado -->
-<div *ngIf="modalVisible" class="modal fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center p-4" (click)="closeModal()">
-  <div class="modal-content bg-white text-gray-800 rounded-xl w-11/12 md:w-2/3 lg:w-1/2 p-6 shadow-2xl" (click)="$event.stopPropagation()">
-    <h4 class="text-2xl font-semibold mb-4 text-[#003087]">{{ modalData.name }}</h4>
+<div *ngIf="modalVisible" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center p-4">
+  <div class="modal-content bg-white text-gray-800 rounded-xl w-full max-w-lg shadow-2xl relative overflow-hidden">
     
-    
-    <p class="text-gray-600"><strong>Ubicación:</strong> {{ modalData.location }}</p>
-    
-    <!-- Calificación en estrellas -->
-    <div class="flex items-center text-[#00AEEF] my-4">
-      <i *ngFor="let star of [1,2,3,4,5]" [class]="star <= modalData.rating ? 'fas fa-star' : 'far fa-star'"></i>
+    <!-- Contenedor con Scroll -->
+    <div class="max-h-[80vh] overflow-y-auto p-6">
+      <h4 class="text-2xl font-semibold mb-4 text-[#003087]">{{ modalData.name }}</h4>
+            
+      <p class="text-gray-600"><strong>Ubicación:</strong> {{ modalData.location }}</p>
+      
+      <!-- Calificación en estrellas -->
+      <div class="flex items-center text-[#00AEEF] my-4">
+        <i *ngFor="let star of [1,2,3,4,5]" [class]="star <= modalData.rating ? 'fas fa-star' : 'far fa-star'"></i>
+      </div>
+
+      <!-- Sección de Habitaciones -->
+      <h5 class="text-xl font-semibold mt-4 text-[#003087]">Habitaciones</h5>
+      <ul class="mt-2">
+        <li *ngFor="let room of modalData.rooms" class="border p-2 rounded-lg my-2 shadow-sm">
+          <strong>{{ room.type }}</strong>: ${{ room.price }} USD por noche
+        </li>
+      </ul>
+
+      <!-- Servicios del Hotel -->
+      <h5 class="text-xl font-semibold mt-4 text-[#003087]">Servicios</h5>
+      <ul class="grid grid-cols-2 md:grid-cols-3 gap-2 text-gray-600 mt-2">
+        <li *ngFor="let amenity of modalData.amenities" class="flex items-center">
+          <i class="fas fa-check text-[#00AEEF] mr-2"></i> {{ amenity }}
+        </li>
+      </ul>
+
+      <h5 class="text-xl font-semibold mt-4 text-[#003087]">Políticas</h5>
+<ul *ngIf="modalData.policies">
+  <li *ngFor="let policy of policiesArray">
+    <strong>{{ policy[0] | titlecase }}:</strong> {{ policy[1] }}
+  </li>
+</ul>
+<p *ngIf="!modalData.policies" class="text-gray-500">No hay políticas disponibles.</p>
+
     </div>
 
-    <!-- Sección de Habitaciones -->
-    <h5 class="text-xl font-semibold mt-4 text-[#003087]">Habitaciones</h5>
-    <ul class="mt-2">
-      <li *ngFor="let room of modalData.rooms" class="border p-2 rounded-lg my-2 shadow-sm">
-        <strong>{{ room.type }}</strong>: ${{ room.price }} USD por noche
-      </li>
-    </ul>
+    <!-- Botón de Cerrar Fijo -->
+    <div class="p-4 border-t bg-white sticky bottom-0 flex justify-center">
+      <button (click)="closeModal()" class="bg-[#00AEEF] hover:bg-[#008BCF] text-white py-2 px-6 rounded-full transition-colors">
+        Cerrar <i class="fas fa-times ml-2"></i>
+      </button>
+    </div>
 
-    <!-- Servicios del Hotel -->
-    <h5 class="text-xl font-semibold mt-4 text-[#003087]">Servicios</h5>
-    <ul class="grid grid-cols-2 md:grid-cols-3 gap-2 text-gray-600 mt-2">
-      <li *ngFor="let amenity of modalData.amenities" class="flex items-center">
-        <i class="fas fa-check text-[#00AEEF] mr-2"></i> {{ amenity }}
-      </li>
-    </ul>
-
-    <!-- Políticas del Hotel -->
-    <h5 class="text-xl font-semibold mt-4 text-[#003087]">Políticas</h5>
-    <ul class="text-gray-600 mt-2">
-      <li *ngFor="let policy of modalData.policies" class="border-l-4 border-[#00AEEF] pl-2 my-1">
-        {{ policy }}
-      </li>
-    </ul>
-
-    <button (click)="closeModal()" class="bg-[#00AEEF] hover:bg-[#008BCF] text-white py-2 px-6 rounded-full transition-colors mt-6">
-      Cerrar <i class="fas fa-times ml-2"></i>
-    </button>
   </div>
 </div>
 
@@ -181,15 +189,19 @@
           </button>
           <div *ngIf="hotelesAbierto" class="p-4">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              <div *ngFor="let hotel of hoteles" class="bg-white shadow-lg p-4 rounded-md">
-                <img [src]="hotel.imagen" [alt]="hotel.nombre" class="w-full h-40 object-cover rounded-md mb-3">
-                <h3 class="font-bold text-lg">{{ hotel.nombre }}</h3>
-                <p>{{ hotel.descripcion }}</p>
-                <a [routerLink]="hotel.detallesLink"
-                  class="text-[#003366] font-semibold hover:text-[#C9A227]">Ver más</a>
+              <div *ngFor="let hotel of hoteles"
+                   class="bg-white shadow-lg p-4 rounded-md hover:shadow-xl transition-shadow duration-300">
+                <img [src]="hotel.image" [alt]="hotel.name" class="w-full h-40 object-cover rounded-md mb-3">
+                <h3 class="font-bold text-lg">{{ hotel.name }}</h3>
+                <p class="text-sm text-gray-600">{{ hotel.description }}</p>
+                <a [routerLink]="['/hotel-detalle', hotel.id]"
+                   class="text-[#003366] font-semibold hover:text-[#00AEEF] transition-colors">
+                  Ver más
+                </a>
               </div>
             </div>
           </div>
+          
         </div>
   
         <!-- Acordeón de Restaurantes -->
@@ -206,7 +218,7 @@
                 <h3 class="font-bold text-lg">{{ restaurant.nombre }}</h3>
                 <p>{{ restaurant.descripcion }}</p>
                 <a [routerLink]="restaurant.detallesLink"
-                  class="text-[#003366] font-semibold hover:text-[#C9A227]">Ver más</a>
+                  class="text-[#003366] font-semibold hover:text-[#00AEEF]">Ver más</a>
               </div>
             </div>
           </div>

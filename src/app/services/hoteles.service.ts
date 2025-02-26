@@ -6,9 +6,12 @@ import { Injectable } from '@angular/core';
 export class HotelsService {
   private hotels = [
     {
+      id: 1,
       name: "Yotau Hotel",
       location: "Santa Cruz, Bolivia",
       image: "/assets/yotau.jpg",
+      description: "Un hotel de lujo en Santa Cruz con suites amplias y todas las comodidades.",
+
       suites: [
         { type: "Suite Ejecutiva", size: "78m2", rooms: 1, price: { single: 65, double: 70 } },
         { type: "Suite Senior", size: "120m2", rooms: 2, price: { triple: 105, quadruple: 140 } },
@@ -31,9 +34,12 @@ export class HotelsService {
       }
     },
     {
+      id: 2,
       name: "Swissotel Santa Cruz",
       location: "Santa Cruz, Bolivia",
       image: "/assets/Swissotel.jpg",
+      description: "Un hotel de clase mundial con habitaciones modernas y servicios premium.",
+
       rooms: [
         { type: "Classic Room", capacity: "1 o 2 Adultos", price: 60 },
         { type: "Classic Double Room", capacity: "1 o 2 Adultos", price: 70 }
@@ -51,9 +57,12 @@ export class HotelsService {
       }
     },
     {
+      id: 3,
       name: "Radisson Hotel Santa Cruz",
       location: "Santa Cruz, Bolivia",
       image: "/assets/radisson.jpg",
+      description: "Un hotel de clase mundial con habitaciones modernas y servicios premium.",
+
       rooms: [
         { type: "King Standard", capacity: "1 persona", price: 79 },
         { type: "King Standard", capacity: "2 personas", price: 99 },
@@ -79,5 +88,9 @@ export class HotelsService {
 
   getHotels() {
     return this.hotels;
+  }
+
+  getHotelById(id: number) {
+    return this.hotels.find(hotel => hotel.id === id);
   }
 }

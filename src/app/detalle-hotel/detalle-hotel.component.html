@@ -1,0 +1,54 @@
+<app-header></app-header>
+
+
+<div *ngIf="hotel" class="bg-white text-gray-800 p-6 rounded-lg shadow-md mt-10">
+    <!-- Imagen y título -->
+    <div class="mb-6">
+      <h1 class="text-3xl font-bold text-[#003087]">{{ hotel.name }}</h1>
+      <p class="text-lg text-[#00AEEF]">{{ hotel.location }}</p>
+      <img [src]="hotel.image" [alt]="hotel.name" class="w-full h-64 object-cover rounded-md mt-4 shadow">
+    </div>
+  
+    <!-- Descripción -->
+    <p class="text-gray-700 text-lg mb-4">{{ hotel.description }}</p>
+  
+    <!-- Servicios -->
+    <div *ngIf="hotel.amenities?.length > 0">
+      <h2 class="text-2xl font-semibold text-[#003087]">Servicios</h2>
+      <ul class="list-disc ml-5 text-gray-700 mt-2">
+        <li *ngFor="let amenity of hotel.amenities">{{ amenity }}</li>
+      </ul>
+    </div>
+  
+    <!-- Habitaciones o suites -->
+    <div *ngIf="hotel.suites?.length > 0 || hotel.rooms?.length > 0" class="mt-6">
+      <h2 class="text-2xl font-semibold text-[#003087]">Opciones de Habitaciones</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-3">
+        <div *ngFor="let suite of hotel.suites || hotel.rooms" class="bg-gray-100 p-4 rounded-md shadow">
+          <h3 class="text-lg font-semibold text-[#00AEEF]">{{ suite.type }}</h3>
+          <p class="text-sm text-gray-700">Tamaño: {{ suite.size || suite.capacity }}</p>
+          <p class="text-sm text-gray-700">Precio: ${{ suite.price.single || suite.price.double || suite.price.triple || suite.price.quadruple || suite.price.sixPeople }}</p>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Políticas del hotel -->
+    <div class="mt-6">
+      <h2 class="text-2xl font-semibold text-[#003087]">Políticas del Hotel</h2>
+      <ul class="list-disc ml-5 text-gray-700 mt-2">
+        <li *ngIf="hotel.policies?.checkIn">Check-in: {{ hotel.policies.checkIn }}</li>
+        <li *ngIf="hotel.policies?.checkOut">Check-out: {{ hotel.policies.checkOut }}</li>
+        <li *ngIf="hotel.policies?.payment">Métodos de pago: {{ hotel.policies.payment }}</li>
+        <li *ngIf="hotel.policies?.cancellation">Política de cancelación: {{ hotel.policies.cancellation }}</li>
+      </ul>
+    </div>
+  
+    <!-- Botón de regreso -->
+    <div class="mt-6">
+      <a routerLink="/hoteles"
+         class="inline-block bg-[#00AEEF] text-white px-6 py-2 rounded-lg shadow-md hover:bg-[#003087] transition">
+        Volver a la lista de hoteles
+      </a>
+    </div>
+  </div>
+  <app-footer></app-footer>
