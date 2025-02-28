@@ -109,35 +109,38 @@
 
   
   <section id="register" class="py-20 bg-white" data-aos="fade-up">
-    <div class="container mx-auto px-6 text-center">
-      <!-- Título -->
-      <h2 class="text-3xl md:text-4xl font-bold mb-6">Inscripción</h2>
-      
-      <!-- Descripción breve -->
-      <p class="text-lg mb-12 text-gray-700">
-        Únete a la Red de Reunión Iberoamericana de Derecho, una comunidad que promueve el intercambio de ideas y conocimientos jurídicos entre profesionales de toda Iberoamérica. Al inscribirte, podrás acceder a eventos, seminarios y otros recursos exclusivos.
-      </p>
-  
-      <!-- Botón para desplegar el formulario -->
-      <button class="w-full bg-[#003366] text-white py-2 px-4 rounded-md text-lg font-semibold hover:bg-[#00AEEF] transition-all" (click)="toggleForm()">
-        Inscríbete Ahora
-      </button>
-  
-      <!-- Acordeón con el Formulario de Google -->
-      <div *ngIf="formVisible" class="mt-6">
-        <div class="relative w-full max-w-4xl mx-auto">
-          <iframe 
-            src="https://forms.office.com/Pages/ResponsePage.aspx?id=ODAmzxzx0kmRg1VqNLdH4mYH53RKLDBMh0Oxd7BNs-lUQVJEN1JJRlpMM0kySDlROFcySkFWMDk0Si4u&embed=true" 
-            width="100%" 
-            height="600" 
-            frameborder="0" 
-            marginheight="0" 
-            marginwidth="0">
-            Cargando…
-          </iframe>
-        </div>
+  <div class="container mx-auto px-6 text-center">
+    <!-- Título -->
+    <h2 class="text-3xl md:text-4xl font-bold mb-6">Inscripción</h2>
+
+    <!-- Descripción breve -->
+    <p class="text-lg mb-12 text-gray-700">
+      Únete a la Red de Reunión Iberoamericana de Derecho, una comunidad que promueve el intercambio de ideas y conocimientos jurídicos entre profesionales de toda Iberoamérica. Al inscribirte, podrás acceder a eventos, seminarios y otros recursos exclusivos.
+    </p>
+
+    <!-- Botón para desplegar el formulario -->
+    <button 
+      class="w-full md:w-auto bg-[#003366] text-white py-2 px-6 rounded-md text-lg font-semibold hover:bg-[#00AEEF] transition-all"
+      (click)="toggleForm()">
+      Inscríbete Ahora
+    </button>
+
+    <!-- Acordeón con el Formulario de Microsoft Forms -->
+    <div *ngIf="formVisible" class="mt-6">
+      <div class="relative w-full max-w-4xl mx-auto bg-white shadow-lg p-4 md:p-6 rounded-md">
+        <iframe 
+          src="https://forms.office.com/Pages/ResponsePage.aspx?id=ODAmzxzx0kmRg1VqNLdH4mYH53RKLDBMh0Oxd7BNs-lUQVJEN1JJRlpMM0kySDlROFcySkFWMDk0Si4u&embed=true" 
+          class="w-full h-[600px] rounded-md"
+          frameborder="0" 
+          allowfullscreen 
+          webkitallowfullscreen 
+          mozallowfullscreen 
+          msallowfullscreen>
+          Cargando…
+        </iframe>
       </div>
     </div>
+  </div>
   </section>
   <section id="hoteles" class="py-20 px-6 md:px-16 bg-white text-gray-800">
     <h3 class="text-4xl md:text-5xl font-bold text-center mb-12 animate-slide-in text-[#003087]">
