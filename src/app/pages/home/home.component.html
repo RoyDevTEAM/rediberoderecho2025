@@ -63,40 +63,40 @@
       </div>
     </div>
   </section>
-  <!-- Sección de la Agenda -->
-<section class="container mx-auto py-10" id="agenda">
+<!-- Sección de la Agenda -->
+<section class="container mx-auto py-10 px-4" id="agenda">
   <h2 class="text-3xl font-bold text-center text-[#003087] mb-6">Agenda del Evento</h2>
 
   <!-- Tabs para seleccionar el día -->
-  <div class="flex justify-center space-x-4 mb-10">
+  <div class="flex justify-center flex-wrap gap-2 md:gap-4 mb-6">
     <button *ngFor="let dia of dias; let i = index"
             [class]="getTabClass(i)"
             (click)="cambiarDia(i)"
-            class="tab-btn bg-[#00AEEF] hover:bg-[#008BCF] px-6 py-3 rounded-lg text-white font-semibold transition">
+            class="tab-btn bg-[#00AEEF] hover:bg-[#008BCF] px-3 py-2 md:px-6 md:py-3 rounded-lg text-white font-semibold text-sm md:text-base transition">
       {{ dia }}
     </button>
   </div>
 
   <!-- Línea de tiempo -->
-  <div class="relative border-l-4 border-[#00AEEF] ml-6">
-    <div *ngFor="let item of agenda[diaActual]" class="mb-10 ml-6" data-aos="fade-up">
+  <div class="relative border-l-4 border-[#00AEEF] ml-3 md:ml-6">
+    <div *ngFor="let item of agenda[diaActual]" class="mb-6 md:mb-10 ml-6" data-aos="fade-up">
       
       <!-- Punto de la línea -->
-      <div class="absolute -left-3 h-6 w-6 bg-[#00AEEF] rounded-full"></div>
+      <div class="absolute -left-3 h-5 w-5 bg-[#00AEEF] rounded-full"></div>
       
       <!-- Contenedor de cada actividad -->
-      <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition transform">
+      <div class="bg-white p-4 md:p-6 rounded-lg shadow-lg hover:shadow-xl transition transform">
         
         <!-- Icono e información -->
-        <div class="flex items-center space-x-4">
+        <div class="flex items-center space-x-3 md:space-x-4">
           <!-- Icono -->
-          <div class="bg-[#00AEEF] text-white rounded-full h-12 w-12 flex items-center justify-center">
-            <i [ngClass]="getIconoActividad(item.actividad)" class="text-xl"></i>
+          <div class="bg-[#00AEEF] text-white rounded-full h-10 w-10 md:h-12 md:w-12 flex items-center justify-center">
+            <i [ngClass]="getIconoActividad(item.actividad)" class="text-lg md:text-xl"></i>
           </div>
           <!-- Texto -->
           <div>
-            <h3 class="text-xl font-semibold text-[#003087]">{{ item.actividad }}</h3>
-            <p class="text-gray-600">
+            <h3 class="text-base md:text-xl font-semibold text-[#003087]">{{ item.actividad }}</h3>
+            <p class="text-gray-600 text-sm md:text-base">
               ⏰ <strong>{{ item.hora }}</strong> | 📍 {{ item.lugar }}
             </p>
           </div>
