@@ -102,8 +102,7 @@ modalData: any = {
     AOS.init({ duration: 1200 }); // Inicializamos AOS
     this.hotelis = this.hotelsService.getHotels();
     this.hoteles = this.hotelsService.getHotels();
-
-
+    this.startSlider();
   }
   
 // Método para alternar la visibilidad del formulario
@@ -161,4 +160,36 @@ cambiarDia(diaIndex: number) {
   getTabClass(index: number) {
     return index === this.diaActual ? 'bg-[#008BCF] text-white' : 'bg-[#00AEEF] text-white';
   }
+
+  images: string[] = [
+    '/assets/fondo1.jpg',
+    '/assets/IMG-20250228-WA0037.jpg',
+    '/assets/IMG-20250228-WA0038.jpg'
+  ];
+
+  currentIndex: number = 0;
+  intervalId: any;
+
+  
+
+  ngOnDestroy() {
+    clearInterval(this.intervalId);
+  }
+
+  startSlider() {
+    this.intervalId = setInterval(() => {
+      this.nextSlide();
+      this.nextSlide1();
+
+    }, 5000);
+  }
+
+  nextSlide1() {
+    this.currentIndex = (this.currentIndex + 1) % this.images.length;
+  }
+
+  goToSlide(index: number) {
+    this.currentIndex = index;
+    clearInterval(this.intervalId); // Reinicia el temporizador al hacer click
+    this.startSlider();  }
 }

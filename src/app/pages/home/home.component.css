@@ -1,52 +1,62 @@
-/* Efecto Parallax */
-.parallax-bg {
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    transform: translateZ(0);
-    /* Aumentamos la visibilidad del parallax */
-    will-change: transform;
-  }
+/* Ajuste del Hero para evitar estiramiento y superposición */
+#hero {
+  position: relative;
+  width: 100%;
+  min-height: 80vh; /* Ajuste para que no se extienda más de lo necesario */
+  max-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px; /* Para evitar que se solape con el header */
+  overflow: hidden;
+}
+
+/* Slider */
+.slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover; /* Mantiene proporción sin estirarse */
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+/* Indicadores */
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.dot.active {
+  background-color: #00AEEF;
+}
+
+/* Ajuste del header para que siempre quede arriba */
+.app-header {
+  position: relative;
+  z-index: 30; /* Asegura que siempre quede por encima */
+  background-color: rgba(0, 0, 0, 0.9); /* Evita que el fondo se vea raro */
+}
+
   
-  /* Animación fade-in */
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  
-  .hero-container {
-    animation: fadeIn 2s ease-out;
-  }
-  
-  /* Para evitar que la imagen de fondo se corte y se solape con el header */
-  #hero {
-    background-position: top center; /* Esto evita que la imagen se corte */
-    min-height: 100vh; /* Asegura que cubra todo el alto de la pantalla */
-    position: relative;
-  }
-  
-  /* Asegura que el contenido esté correctamente posicionado dentro del hero */
-  #hero .relative {
-    z-index: 10; /* Para que el contenido esté encima de la capa negra */
-  }
-  
-  /* Corregir la superposición del header */
-  .app-header {
-    z-index: 20; /* Eleva el header para evitar la superposición */
-  }
-  
-  /* Se puede agregar un pequeño efecto en la imagen parallax */
-  @media (min-width: 768px) {
-    .parallax-bg {
-      background-position: center center;
-      background-attachment: fixed;
-      transform: translate3d(0, 0, 0);
-    }
-  }
   @keyframes slideIn {
     0% { transform: translateY(50px); opacity: 0; }
     100% { transform: translateY(0); opacity: 1; }
