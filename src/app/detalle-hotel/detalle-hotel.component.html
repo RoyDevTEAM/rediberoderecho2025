@@ -28,7 +28,7 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-3">
         <div *ngFor="let room of hotel.rooms" class="bg-gray-100 p-4 rounded-md shadow">
           <h3 class="text-lg font-semibold text-[#00AEEF]">{{ room.type }}</h3>
-          <p class="text-sm text-gray-700">Tamaño: {{ room.size || 'No especificado' }}</p>
+         <!-- <p class="text-sm text-gray-700">Tamaño: {{ room.size || 'No especificado' }}</p>-->
           <p class="text-sm text-gray-700">Precio: ${{ room.price }}</p>
         </div>
       </div>
@@ -48,7 +48,7 @@
   
     <!-- Botón de regreso -->
     <div class="mt-6">
-      <a routerLink="/hoteles"
+      <a routerLink="hoteles"
          class="inline-block bg-[#00AEEF] text-white px-6 py-2 rounded-lg shadow-md hover:bg-[#003087] transition">
         Volver a la lista de hoteles
       </a>
