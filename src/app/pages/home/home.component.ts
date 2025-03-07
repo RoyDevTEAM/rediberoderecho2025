@@ -54,41 +54,43 @@ modalData: any = {
       date: new Date('2025-07-10')
     }
   ];
-  dias = [ '7 de Mayo', '8 de Mayo', '9 de Mayo', '10 de Mayo']; // Lista de días
-  diaActual = 0; // Día actual visible
-  
-  agenda: { dia: string; hora: string; actividad: string; lugar: string; }[][] = [
-   
-    [ // Día 2 - 7 de Mayo
-      { dia: '7 de Mayo', hora: '08:00', actividad: 'Movilización de delegaciones a la UPDS', lugar: 'Hoteles' },
-      { dia: '7 de Mayo', hora: '09:00', actividad: 'Inauguración del Encuentro', lugar: 'UPDS' },
-      { dia: '7 de Mayo', hora: '09:15', actividad: 'Conferencia Magistral - Invitado especial', lugar: 'Auditorio Principal' },
-      { dia: '7 de Mayo', hora: '09:30', actividad: 'Coffee Break', lugar: 'Lobby' },
-      { dia: '7 de Mayo', hora: '10:00', actividad: 'Ponencias RIFED', lugar: 'Salas designadas' },
-      { dia: '7 de Mayo', hora: '12:00', actividad: 'Transición de IBEROJURIS', lugar: 'UPDS' },
-      { dia: '7 de Mayo', hora: '13:30', actividad: 'Almuerzo', lugar: 'Jardín de Asia' },
-      { dia: '7 de Mayo', hora: '15:00', actividad: 'Huéspedes ilustres - Guía por la ciudad', lugar: 'Santa Cruz' },
-    ],
-    [ // Día 3 - 8 de Mayo
-      { dia: '8 de Mayo', hora: '09:00', actividad: 'Inicio de actividades', lugar: 'UPDS' },
-      { dia: '8 de Mayo', hora: '09:15', actividad: 'Ganadores del V Concurso Estudiantil RIFED', lugar: 'Auditorio' },
-      { dia: '8 de Mayo', hora: '09:30', actividad: 'Coffee Break', lugar: 'Cafetería UPDS' },
-      { dia: '8 de Mayo', hora: '10:00', actividad: 'Ponencias RIFED y Docentes UPDS', lugar: 'Salas designadas' },
-      { dia: '8 de Mayo', hora: '13:00', actividad: 'Almuerzo', lugar: 'Cafetería' },
-      { dia: '8 de Mayo', hora: '15:00', actividad: 'Mesas Docentes y Exposición de Investigaciones', lugar: 'Salas designadas' },
-    ],
-    [ // Día 4 - 9 de Mayo
-      { dia: '9 de Mayo', hora: '09:00', actividad: 'Inicio de actividades', lugar: 'UPDS' },
-      { dia: '9 de Mayo', hora: '10:00', actividad: 'Conferencia de Clausura', lugar: 'Auditorio' },
-      { dia: '9 de Mayo', hora: '13:00', actividad: 'Almuerzo', lugar: 'Cafetería' },
-      { dia: '9 de Mayo', hora: '15:00', actividad: 'Reunión operativa de la Red', lugar: 'Sala de reuniones' },
-    ],
-    [ // Día 5 - 10 de Mayo
-      { dia: '10 de Mayo', hora: '06:00', actividad: 'Movilización a Samaipata', lugar: 'UPDS' }
-    ]
-  ];
-  
-  
+  dias = ['15 de junio', '16 de junio', '17 de junio', '18 de junio', '19 de junio']; // Lista de días
+diaActual = 0; // Día actual visible
+
+agenda: { dia: string; hora: string; actividad: string; lugar: string; }[][] = [
+  [ // Día 1 - 15 de junio (Se debe agregar si tiene actividades)
+    { dia: '15 de junio', hora: '10:00', actividad: 'Bienvenida y registro', lugar: 'UPDS' },
+    { dia: '15 de junio', hora: '12:00', actividad: 'Almuerzo de integración', lugar: 'Restaurante local' },
+  ],
+  [ // Día 2 - 16 de junio
+    { dia: '16 de junio', hora: '08:00', actividad: 'Movilización de delegaciones a la UPDS', lugar: 'Hoteles' },
+    { dia: '16 de junio', hora: '09:00', actividad: 'Inauguración del Encuentro', lugar: 'UPDS' },
+    { dia: '16 de junio', hora: '09:15', actividad: 'Conferencia Magistral - Invitado especial', lugar: 'Auditorio Principal' },
+    { dia: '16 de junio', hora: '09:30', actividad: 'Coffee Break', lugar: 'Lobby' },
+    { dia: '16 de junio', hora: '10:00', actividad: 'Ponencias RIFED', lugar: 'Salas designadas' },
+    { dia: '16 de junio', hora: '12:00', actividad: 'Transición de IBEROJURIS', lugar: 'UPDS' },
+    { dia: '16 de junio', hora: '13:30', actividad: 'Almuerzo', lugar: 'Jardín de Asia' },
+    { dia: '16 de junio', hora: '15:00', actividad: 'Huéspedes ilustres - Guía por la ciudad', lugar: 'Santa Cruz' },
+  ],
+  [ // Día 3 - 17 de junio
+    { dia: '17 de junio', hora: '09:00', actividad: 'Inicio de actividades', lugar: 'UPDS' },
+    { dia: '17 de junio', hora: '09:15', actividad: 'Ganadores del V Concurso Estudiantil RIFED', lugar: 'Auditorio' },
+    { dia: '17 de junio', hora: '09:30', actividad: 'Coffee Break', lugar: 'Cafetería UPDS' },
+    { dia: '17 de junio', hora: '10:00', actividad: 'Ponencias RIFED y Docentes UPDS', lugar: 'Salas designadas' },
+    { dia: '17 de junio', hora: '13:00', actividad: 'Almuerzo', lugar: 'Cafetería' },
+    { dia: '17 de junio', hora: '15:00', actividad: 'Mesas Docentes y Exposición de Investigaciones', lugar: 'Salas designadas' },
+  ],
+  [ // Día 4 - 18 de junio
+    { dia: '18 de junio', hora: '09:00', actividad: 'Inicio de actividades', lugar: 'UPDS' },
+    { dia: '18 de junio', hora: '10:00', actividad: 'Conferencia de Clausura', lugar: 'Auditorio' },
+    { dia: '18 de junio', hora: '13:00', actividad: 'Almuerzo', lugar: 'Cafetería' },
+    { dia: '18 de junio', hora: '15:00', actividad: 'Reunión operativa de la Red', lugar: 'Sala de reuniones' },
+  ],
+  [ // Día 5 - 19 de junio (Movido a su posición correcta)
+    { dia: '19 de junio', hora: '06:00', actividad: 'Movilización a Samaipata', lugar: 'UPDS' }
+  ]
+];
+
   
   restaurantes = [
     { nombre: 'Jardín de Asia', descripcion: 'Cocina asiática de alta calidad con ingredientes locales.', detallesLink: '/restaurante/jardin-asia', imagen: 'assets/images/restaurante-jardin-asia.jpg' },
