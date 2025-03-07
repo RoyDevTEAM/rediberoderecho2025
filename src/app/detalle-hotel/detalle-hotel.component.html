@@ -1,7 +1,9 @@
 <app-header></app-header>
 
-
-<div *ngIf="hotel" class="bg-white text-gray-800 p-6 rounded-lg shadow-md mt-10">
+<!-- Contenedor principal que asegura que el contenido empieza desde arriba -->
+<div class="min-h-screen flex flex-col items-center bg-gray-100 pt-20 px-6">
+  
+  <div *ngIf="hotel" class="bg-white text-gray-800 p-6 rounded-lg shadow-md w-full max-w-4xl">
     <!-- Imagen y título -->
     <div class="mb-6">
       <h1 class="text-3xl font-bold text-[#003087]">{{ hotel.name }}</h1>
@@ -27,7 +29,9 @@
         <div *ngFor="let suite of hotel.suites || hotel.rooms" class="bg-gray-100 p-4 rounded-md shadow">
           <h3 class="text-lg font-semibold text-[#00AEEF]">{{ suite.type }}</h3>
           <p class="text-sm text-gray-700">Tamaño: {{ suite.size || suite.capacity }}</p>
-          <p class="text-sm text-gray-700">Precio: ${{ suite.price.single || suite.price.double || suite.price.triple || suite.price.quadruple || suite.price.sixPeople }}</p>
+          <p class="text-sm text-gray-700">
+            Precio: ${{ suite.price.single || suite.price.double || suite.price.triple || suite.price.quadruple || suite.price.sixPeople }}
+          </p>
         </div>
       </div>
     </div>
@@ -51,4 +55,7 @@
       </a>
     </div>
   </div>
-  <app-footer></app-footer>
+
+</div>
+
+<app-footer></app-footer>

@@ -149,36 +149,29 @@
     </div>
   </div>
   </section>
+
   <section id="hoteles" class="py-20 px-6 md:px-16 bg-white text-gray-800">
-    <h3 class="text-4xl md:text-5xl font-bold text-center mb-12 animate-slide-in text-[#003087]">
+    <h3 class="text-4xl md:text-5xl font-bold text-center mb-12 text-[#003087]">
       Lugares para Hospedarse
     </h3>
-    <div class="slider relative">
-      <div class="slider-container" [style.transform]="'translateX(-' + (currentSlide * 100) + '%)'">
-        <div *ngFor="let hotel of hotelis" class="min-w-full md:min-w-[33.33%] p-4">
-          <a [routerLink]="['/hotel-detalle', hotel.id]" class="block">
-            <div class="bg-white rounded-xl shadow-2xl overflow-hidden transform hover:scale-105 transition-transform duration-300 cursor-pointer">
-              <div class="h-56 bg-cover bg-center" [style.backgroundImage]="'url(' + hotel.image + ')'"></div>
-              <div class="p-6">
-                <h4 class="text-2xl font-semibold mb-3 text-[#003087]">{{ hotel.name }}</h4>
-                <p class="text-gray-600 mb-2">{{ hotel.location }}</p>
-                <p class="text-[#00AEEF] font-bold mb-4">
-                  {{ hotel.suites ? 'Desde $' + hotel.suites[0].price.single : 'Consultar Precios' }}
-                </p>
-              </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+      <div *ngFor="let hotel of hotelis" class="p-4">
+        <a [routerLink]="['/hotel-detalle', hotel.id]" class="block">
+          <div class="bg-white rounded-xl shadow-2xl overflow-hidden transform hover:scale-105 transition-transform duration-300 cursor-pointer">
+            <div class="h-56 bg-cover bg-center" [style.backgroundImage]="'url(' + hotel.image + ')'"></div>
+            <div class="p-6">
+              <h4 class="text-2xl font-semibold mb-3 text-[#003087]">{{ hotel.name }}</h4>
+              <p class="text-gray-600 mb-2">{{ hotel.location }}</p>
+              <p class="text-[#00AEEF] font-bold mb-4">
+                {{ hotel.suites ? 'Desde $' + hotel.suites[0].price.single : 'Consultar Precios' }}
+              </p>
             </div>
-          </a>
-        </div>
+          </div>
+        </a>
       </div>
-      <button (click)="prevSlide()" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-[#00AEEF] text-white p-3 rounded-full hover:bg-[#008BCF] transition-colors">
-        <i class="fas fa-chevron-left"></i>
-      </button>
-      <button (click)="nextSlide()" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-[#00AEEF] text-white p-3 rounded-full hover:bg-[#008BCF] transition-colors">
-        <i class="fas fa-chevron-right"></i>
-      </button>
     </div>
   </section>
-
+  
   
   
   <section id="contact" class="py-20 bg-white" data-aos="fade-up">

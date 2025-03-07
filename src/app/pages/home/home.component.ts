@@ -59,8 +59,7 @@ diaActual = 0; // Día actual visible
 
 agenda: { dia: string; hora: string; actividad: string; lugar: string; }[][] = [
   [ // Día 1 - 15 de junio (Se debe agregar si tiene actividades)
-    { dia: '15 de junio', hora: '10:00', actividad: 'Bienvenida y registro', lugar: 'UPDS' },
-    { dia: '15 de junio', hora: '12:00', actividad: 'Almuerzo de integración', lugar: 'Restaurante local' },
+    { dia: '15 de junio', hora: '10:00', actividad: 'Arribo', lugar: 'UPDS' },
   ],
   [ // Día 2 - 16 de junio
     { dia: '16 de junio', hora: '08:00', actividad: 'Movilización de delegaciones a la UPDS', lugar: 'Hoteles' },

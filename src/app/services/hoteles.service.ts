@@ -55,7 +55,7 @@ export class HotelsService {
     },
     {
       id: 3,
-      name: "Swissotel Santa Cruz",
+      name: "Swissotel Hotel",
       location: "Santa Cruz, Bolivia",
       image: "/assets/Swissotel.jpg",
       description: "Hotel de lujo con habitaciones modernas y servicios premium.",
