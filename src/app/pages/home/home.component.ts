@@ -58,35 +58,44 @@ modalData: any = {
 diaActual = 0; // Día actual visible
 
 agenda: { dia: string; hora: string; actividad: string; lugar: string; }[][] = [
-  [ // Día 1 - 15 de junio (Se debe agregar si tiene actividades)
-    { dia: '15 de junio', hora: '10:00', actividad: 'Arribo', lugar: 'UPDS' },
+  [ // Día 1 - 15 de junio
+    { dia: '15 de junio', hora: 'Arribo', actividad: 'Arribo', lugar: 'UPDS' },
   ],
   [ // Día 2 - 16 de junio
-    { dia: '16 de junio', hora: '08:00', actividad: 'Movilización de delegaciones a la UPDS', lugar: 'Hoteles' },
-    { dia: '16 de junio', hora: '09:00', actividad: 'Inauguración del Encuentro', lugar: 'UPDS' },
-    { dia: '16 de junio', hora: '09:15', actividad: 'Conferencia Magistral - Invitado especial', lugar: 'Auditorio Principal' },
-    { dia: '16 de junio', hora: '09:30', actividad: 'Coffee Break', lugar: 'Lobby' },
-    { dia: '16 de junio', hora: '10:00', actividad: 'Ponencias RIFED', lugar: 'Salas designadas' },
-    { dia: '16 de junio', hora: '12:00', actividad: 'Transición de IBEROJURIS', lugar: 'UPDS' },
-    { dia: '16 de junio', hora: '13:30', actividad: 'Almuerzo', lugar: 'Jardín de Asia' },
-    { dia: '16 de junio', hora: '15:00', actividad: 'Huéspedes ilustres - Guía por la ciudad', lugar: 'Santa Cruz' },
+    { dia: '16 de junio', hora: '07:45', actividad: 'Movilización de las delegaciones de los Hoteles a la UPDS', lugar: 'Hoteles' },
+    { dia: '16 de junio', hora: '09:00', actividad: 'Inauguración del Encuentro', lugar: 'Salón auditorio' },
+    { dia: '16 de junio', hora: '09:15', actividad: 'Conferencia Magistral - Invitado especial nacional', lugar: 'Auditorio Principal' },
+    { dia: '16 de junio', hora: '09:40', actividad: 'Coctel Inaugural', lugar: 'Galería CECID' },
+    { dia: '16 de junio', hora: '10:15', actividad: 'Ponencias RIFED', lugar: 'Salón auditorio' },
+    { dia: '16 de junio', hora: '12:00', actividad: 'Transición de IBEROJURIS', lugar: 'Auditorio' },
+    { dia: '16 de junio', hora: '13:30', actividad: 'Refrigerio (Pernil)', lugar: 'UPDS' },
+    { dia: '16 de junio', hora: '15:00', actividad: 'Guía por la ciudad, paseo turístico', lugar: 'Santa Cruz' },
+    { dia: '16 de junio', hora: '19:30', actividad: 'Cena Inaugural', lugar: 'Jardín de Asia' },
   ],
   [ // Día 3 - 17 de junio
-    { dia: '17 de junio', hora: '09:00', actividad: 'Inicio de actividades', lugar: 'UPDS' },
+    { dia: '17 de junio', hora: '07:45', actividad: 'Movilización de las delegaciones de los Hoteles a la UPDS', lugar: 'Hoteles' },
+    { dia: '17 de junio', hora: '09:00', actividad: 'Inicio', lugar: 'Salón auditorio' },
     { dia: '17 de junio', hora: '09:15', actividad: 'Ganadores del V Concurso Estudiantil RIFED', lugar: 'Auditorio' },
-    { dia: '17 de junio', hora: '09:30', actividad: 'Coffee Break', lugar: 'Cafetería UPDS' },
-    { dia: '17 de junio', hora: '10:00', actividad: 'Ponencias RIFED y Docentes UPDS', lugar: 'Salas designadas' },
-    { dia: '17 de junio', hora: '13:00', actividad: 'Almuerzo', lugar: 'Cafetería' },
-    { dia: '17 de junio', hora: '15:00', actividad: 'Mesas Docentes y Exposición de Investigaciones', lugar: 'Salas designadas' },
+    { dia: '17 de junio', hora: '09:50', actividad: 'Coffee Break', lugar: 'Terraza' },
+    { dia: '17 de junio', hora: '10:20', actividad: 'Ponencias RIFED y Docentes UPDS', lugar: 'Salón auditorio' },
+    { dia: '17 de junio', hora: '13:00', actividad: 'Almuerzo', lugar: 'Fogón del Gringo' },
+    { dia: '17 de junio', hora: '15:00', actividad: 'Mesas Docentes', lugar: 'Aulas de posgrado' },
   ],
   [ // Día 4 - 18 de junio
-    { dia: '18 de junio', hora: '09:00', actividad: 'Inicio de actividades', lugar: 'UPDS' },
-    { dia: '18 de junio', hora: '10:00', actividad: 'Conferencia de Clausura', lugar: 'Auditorio' },
-    { dia: '18 de junio', hora: '13:00', actividad: 'Almuerzo', lugar: 'Cafetería' },
-    { dia: '18 de junio', hora: '15:00', actividad: 'Reunión operativa de la Red', lugar: 'Sala de reuniones' },
+    { dia: '18 de junio', hora: '08:00', actividad: 'Movilización de las delegaciones de los Hoteles a la UPDS', lugar: 'Hoteles' },
+    { dia: '18 de junio', hora: '09:00', actividad: 'Inicio', lugar: 'Salón auditorio' },
+    { dia: '18 de junio', hora: '09:15', actividad: 'Conferencia de Clausura', lugar: 'Auditorio' },
+    { dia: '18 de junio', hora: '09:35', actividad: 'Coffee Break', lugar: 'Terraza' },
+    { dia: '18 de junio', hora: '10:00', actividad: 'Mesas Docentes', lugar: 'Salas designadas' },
+    { dia: '18 de junio', hora: '13:00', actividad: 'Almuerzo', lugar: 'Porongo' },
+    { dia: '18 de junio', hora: '17:00', actividad: 'Reunión operativa de la Red', lugar: 'Porongo' },
   ],
-  [ // Día 5 - 19 de junio (Movido a su posición correcta)
-    { dia: '19 de junio', hora: '06:00', actividad: 'Movilización a Samaipata', lugar: 'UPDS' }
+  [ // Día 5 - 19 de junio
+    { dia: '19 de junio', hora: '06:00', actividad: 'Movilización de las delegaciones de los Hoteles a Samaipata (con visita al Fuerte)', lugar: 'Hoteles' },
+    { dia: '19 de junio', hora: '11:30', actividad: 'Llegada a Samaipata', lugar: 'Samaipata' },
+    { dia: '19 de junio', hora: '12:15', actividad: 'Almuerzo', lugar: 'Samaipata' },
+    { dia: '19 de junio', hora: '14:00', actividad: 'Visita del museo', lugar: 'Samaipata' },
+    { dia: '19 de junio', hora: '18:00', actividad: 'Retorno', lugar: 'Samaipata' },
   ]
 ];
 
