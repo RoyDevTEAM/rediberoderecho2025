@@ -23,16 +23,16 @@
     </div>
   
     <!-- Habitaciones o suites -->
-    <div *ngIf="hotel.rooms?.length > 0" class="mt-6">
-      <h2 class="text-2xl font-semibold text-[#003087]">Opciones de Habitaciones</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-3">
-        <div *ngFor="let room of hotel.rooms" class="bg-gray-100 p-4 rounded-md shadow">
-          <h3 class="text-lg font-semibold text-[#00AEEF]">{{ room.type }}</h3>
-         <!-- <p class="text-sm text-gray-700">Tamaño: {{ room.size || 'No especificado' }}</p>-->
-          <p class="text-sm text-gray-700">Precio: ${{ room.price }}</p>
-        </div>
-      </div>
+<div *ngIf="hotel.rooms?.length > 0" class="mt-6">
+  <h2 class="text-2xl font-semibold text-[#003087]">Opciones de Habitaciones</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-3">
+    <div *ngFor="let room of hotel.rooms" class="bg-gray-100 p-4 rounded-md shadow">
+      <h3 class="text-lg font-semibold text-[#00AEEF]">{{ room.type }}</h3>
+      <!-- <p class="text-sm text-gray-700">Tamaño: {{ room.size || 'No especificado' }}</p> -->
+      <p class="text-sm text-gray-700">Precio: Bs {{ room.price }}</p>
     </div>
+  </div>
+</div>
     
   
     <!-- Políticas del hotel -->
