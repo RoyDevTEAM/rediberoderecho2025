@@ -1,60 +1,50 @@
 <app-header></app-header>
 
-<!-- Contenedor principal que asegura que el contenido empieza desde arriba -->
-<div class="min-h-screen flex flex-col items-center bg-gray-100 pt-20 px-6">
+<!-- Contenedor principal con margen superior y estilo claro -->
+<div class="min-h-screen flex flex-col items-center bg-gray-50 pt-16 px-6">
   
-  <div *ngIf="hotel" class="bg-white text-gray-800 p-6 rounded-lg shadow-md w-full max-w-4xl">
+  <div *ngIf="hotel" class="bg-white text-gray-800 p-8 rounded-xl shadow-lg w-full max-w-4xl">
     <!-- Imagen y título -->
-    <div class="mb-6">
-      <h1 class="text-3xl font-bold text-[#003087]">{{ hotel.name }}</h1>
+    <div class="mb-8">
+      <h1 class="text-4xl font-extrabold text-[#003087]">{{ hotel.name }}</h1>
       <p class="text-lg text-[#00AEEF]">{{ hotel.location }}</p>
-      <img [src]="hotel.image" [alt]="hotel.name" class="w-full h-64 object-cover rounded-md mt-4 shadow">
+      <img [src]="hotel.image" [alt]="hotel.name" class="w-full h-80 object-cover rounded-lg mt-6 shadow-lg">
     </div>
   
     <!-- Descripción -->
-    <p class="text-gray-700 text-lg mb-4">{{ hotel.description }}</p>
-  
-    <!-- Servicios -->
-    <div *ngIf="hotel.amenities?.length > 0">
-      <h2 class="text-2xl font-semibold text-[#003087]">Servicios</h2>
-      <ul class="list-disc ml-5 text-gray-700 mt-2">
-        <li *ngFor="let amenity of hotel.amenities">{{ amenity }}</li>
-      </ul>
-    </div>
+    <p class="text-gray-700 text-xl mb-6">{{ hotel.description }}</p>
   
     <!-- Habitaciones o suites -->
-<div *ngIf="hotel.rooms?.length > 0" class="mt-6">
-  <h2 class="text-2xl font-semibold text-[#003087]">Opciones de Habitaciones</h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-3">
-    <div *ngFor="let room of hotel.rooms" class="bg-gray-100 p-4 rounded-md shadow">
-      <h3 class="text-lg font-semibold text-[#00AEEF]">{{ room.type }}</h3>
-      <!-- <p class="text-sm text-gray-700">Tamaño: {{ room.size || 'No especificado' }}</p> -->
-      <p class="text-sm text-gray-700">Precio: Bs {{ room.price }}</p>
+    <div *ngIf="hotel.rooms?.length > 0" class="mt-8">
+      <h2 class="text-3xl font-semibold text-[#003087]">Opciones de Habitaciones</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
+        <div *ngFor="let room of hotel.rooms" class="bg-gray-100 p-6 rounded-xl shadow-md hover:shadow-xl transition">
+          <h3 class="text-xl font-semibold text-[#00AEEF]">{{ room.type }}</h3>
+          <p class="text-base text-gray-700 mt-2">
+            Precio: 
+            <span *ngIf="room.priceUsd; else noPrice" class="font-semibold text-[#003087]">$ {{ room.priceUsd }}</span>
+            <ng-template #noPrice>
+              <span class="text-red-500">Precio no disponible</span>
+            </ng-template>
+          </p>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-    
-  
-    <!-- Políticas del hotel -->
-    <div class="mt-6">
-      <h2 class="text-2xl font-semibold text-[#003087]">Políticas del Hotel</h2>
-      <ul class="list-disc ml-5 text-gray-700 mt-2">
-        <li *ngIf="hotel.policies?.checkIn">Check-in: {{ hotel.policies.checkIn }}</li>
-        <li *ngIf="hotel.policies?.checkOut">Check-out: {{ hotel.policies.checkOut }}</li>
-        <li *ngIf="hotel.policies?.payment">Métodos de pago: {{ hotel.policies.payment }}</li>
-        <li *ngIf="hotel.policies?.cancellation">Política de cancelación: {{ hotel.policies.cancellation }}</li>
-      </ul>
+
+    <!-- Botón de Ir al sitio oficial -->
+    <div class="mt-8 flex justify-center">
+      <a [href]="hotel.url" target="_blank"
+         class="inline-block bg-[#00AEEF] text-white px-8 py-3 rounded-lg shadow-lg hover:bg-[#003087] transition duration-300 transform hover:scale-105">
+        Ir al sitio oficial
+      </a>
     </div>
-  
+
     <!-- Botón de regreso -->
-    <div class="mt-6">
+    <div class="mt-6 flex justify-center">
       <a routerLink="hoteles"
-         class="inline-block bg-[#00AEEF] text-white px-6 py-2 rounded-lg shadow-md hover:bg-[#003087] transition">
-        Volver a la lista de hoteles
+         class="inline-block bg-[#003087] text-white px-8 py-3 rounded-lg shadow-lg hover:bg-[#00AEEF] transition duration-300 transform hover:scale-105">
+        Regresar a la lista de hoteles
       </a>
     </div>
   </div>
-
 </div>
-
-<app-footer></app-footer>
