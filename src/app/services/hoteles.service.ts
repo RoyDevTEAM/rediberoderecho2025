@@ -11,7 +11,7 @@ export class HotelsService {
       "location": "Santa Cruz, Bolivia",
       "image": "/assets/hampton.jpg",
       "description": "Hotel con servicios de calidad y tarifas corporativas.",
-      "url": "https://www.hamptonhotel.com", 
+      "url": "https://www.hilton.com/es/locations/bolivia/santa-cruz-de-la-sierra/hampton-by-hilton/?content=es", 
       "rooms": [
         {
           "type": "Estándar Simple o Twin",
@@ -50,7 +50,7 @@ export class HotelsService {
       "location": "Santa Cruz, Bolivia",
       "image": "/assets/lp.jpg",
       "description": "Hotel moderno con opciones de hospedaje y salones para eventos.",
-      "url": "https://www.lphoteles.com",
+      "url": "https://lphoteles.com/lpsantacruz/",
       "rooms": [
         { "type": "Habitación Doble", "capacity": 2, "priceUsd": 377, "totalBs": 75400, "nights": 5, "quantity": 40 },
         
@@ -107,7 +107,7 @@ export class HotelsService {
       "location": "Santa Cruz, Bolivia",
       "image": "/assets/Swissotel.jpg",
       "description": "Hotel de lujo con habitaciones modernas y servicios premium.",
-      "url": "https://www.swissotel.com",  
+      "url": "https://swissotelsantacruz.com.bo/",  
       "rooms": [
         { "type": "Classic Room", "priceUsd": 60, "priceBs": 417.60, "priceForFourNightsUsd": 240, "priceForFourNightsBs": 1670.40 },
         { "type": "Classic Double Room", "priceUsd": 70, "priceBs": 487.20, "priceForFourNightsUsd": 280, "priceForFourNightsBs": 1948.80 }
@@ -140,7 +140,7 @@ export class HotelsService {
       "location": "Santa Cruz, Bolivia",
       "image": "/assets/ghotel.jpg",
       "description": "Hotel elegante con diversas opciones de hospedaje.",
-      "url": "https://www.ghotelsantacruz.com",  
+      "url": "https://g-santa-cruz-de-la-sierra.santacruztophotels.com/es/",  
       "rooms": [
         { "type": "Habitación Estándar", "priceBs": 240, "priceUsd": 34.48, "priceForFourNightsBs": 960, "priceForFourNightsUsd": 137.93 },
         { "type": "Habitación Deluxe", "priceBs": 250, "priceUsd": 35.92, "priceForFourNightsBs": 1000, "priceForFourNightsUsd": 143.68 },
