@@ -142,15 +142,15 @@ export class HotelsService {
       "description": "Hotel elegante con diversas opciones de hospedaje.",
       "url": "https://g-santa-cruz-de-la-sierra.santacruztophotels.com/es/",  
       "rooms": [
-        { "type": "Habitación Estándar", "priceBs": 240, "priceUsd": 34.48, "priceForFourNightsBs": 960, "priceForFourNightsUsd": 137.93 },
-        { "type": "Habitación Deluxe", "priceBs": 250, "priceUsd": 35.92, "priceForFourNightsBs": 1000, "priceForFourNightsUsd": 143.68 },
-        { "type": "Suite Tina Simple", "priceBs": 280, "priceUsd": 40.23, "priceForFourNightsBs": 1120, "priceForFourNightsUsd": 160.90 },
-        { "type": "Suite Tina Doble", "priceBs": 300, "priceUsd": 43.10, "priceForFourNightsBs": 1200, "priceForFourNightsUsd": 172.41 },
-        { "type": "Habitación Doble", "priceBs": 320, "priceUsd": 45.98, "priceForFourNightsBs": 1280, "priceForFourNightsUsd": 183.91 },
-        { "type": "Habitación Triple", "priceBs": 390, "priceUsd": 56.03, "priceForFourNightsBs": 1560, "priceForFourNightsUsd": 224.14 },
-        { "type": "Suite Ejecutiva", "priceBs": 350, "priceUsd": 50.29, "priceForFourNightsBs": 1400, "priceForFourNightsUsd": 201.72 },
-        { "type": "Suite Estudio", "priceBs": 350, "priceUsd": 50.29, "priceForFourNightsBs": 1400, "priceForFourNightsUsd": 201.72 },
-        { "type": "Suite Apart", "priceBs": 360, "priceUsd": 51.72, "priceForFourNightsBs": 1440, "priceForFourNightsUsd": 206.90 }
+        { "type": "Habitación Estándar", "priceBs": 240, "priceUsd": 35, "priceForFourNightsBs": 960, "priceForFourNightsUsd": 137.93 },
+        { "type": "Habitación Deluxe", "priceBs": 250, "priceUsd": 36, "priceForFourNightsBs": 1000, "priceForFourNightsUsd": 143.68 },
+        { "type": "Suite Tina Simple", "priceBs": 280, "priceUsd": 41, "priceForFourNightsBs": 1120, "priceForFourNightsUsd": 160.90 },
+        { "type": "Suite Tina Doble", "priceBs": 300, "priceUsd": 44, "priceForFourNightsBs": 1200, "priceForFourNightsUsd": 172.41 },
+        { "type": "Habitación Doble", "priceBs": 320, "priceUsd": 46, "priceForFourNightsBs": 1280, "priceForFourNightsUsd": 183.91 },
+        { "type": "Habitación Triple", "priceBs": 390, "priceUsd": 56, "priceForFourNightsBs": 1560, "priceForFourNightsUsd": 224.14 },
+        { "type": "Suite Ejecutiva", "priceBs": 350, "priceUsd": 51, "priceForFourNightsBs": 1400, "priceForFourNightsUsd": 201.72 },
+        { "type": "Suite Estudio", "priceBs": 350, "priceUsd": 51, "priceForFourNightsBs": 1400, "priceForFourNightsUsd": 201.72 },
+        { "type": "Suite Apart", "priceBs": 360, "priceUsd": 52, "priceForFourNightsBs": 1440, "priceForFourNightsUsd": 206.90 }
       ],
       "amenities": [
         "Desayuno buffet (7:00 AM - 10:00 AM)",
