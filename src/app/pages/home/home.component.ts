@@ -72,15 +72,17 @@ agenda: { dia: string; hora: string; actividad: string; lugar: string; }[][] = [
     { dia: '16 de junio', hora: '15:00', actividad: 'Guía por la ciudad, paseo turístico', lugar: 'Santa Cruz' },
     { dia: '16 de junio', hora: '19:30', actividad: 'Cena Inaugural', lugar: 'Jardín de Asia' },
   ],
-  [ // Día 3 - 17 de junio
-    { dia: '17 de junio', hora: '07:45', actividad: 'Movilización de las delegaciones de los Hoteles a la UPDS', lugar: 'Hoteles' },
-    { dia: '17 de junio', hora: '09:00', actividad: 'Inicio', lugar: 'Salón auditorio' },
-    { dia: '17 de junio', hora: '09:15', actividad: 'Ganadores del V Concurso Estudiantil RIFED', lugar: 'Auditorio' },
-    { dia: '17 de junio', hora: '09:50', actividad: 'Coffee Break', lugar: 'Terraza' },
-    { dia: '17 de junio', hora: '10:20', actividad: 'Ponencias RIFED y Docentes UPDS', lugar: 'Salón auditorio' },
-    { dia: '17 de junio', hora: '13:00', actividad: 'Almuerzo', lugar: 'Fogón del Gringo' },
-    { dia: '17 de junio', hora: '15:00', actividad: 'Mesas Docentes', lugar: 'Aulas de posgrado' },
-  ],
+  [
+  { "dia": "17 de junio", "hora": "07:45", "actividad": "Movilización de las delegaciones de los Hoteles a la UPDS", "lugar": "Hoteles" },
+  { "dia": "17 de junio", "hora": "09:00", "actividad": "Inicio", "lugar": "Salón auditorio" },
+  { "dia": "17 de junio", "hora": "09:00", "actividad": "Presentación del Libro Colectivo del XII Encuentro de la REFID", "lugar": "Salón auditorio" },
+  { "dia": "17 de junio", "hora": "09:15", "actividad": "Ganadores del V Concurso Estudiantil RIFED", "lugar": "Auditorio" },
+  { "dia": "17 de junio", "hora": "09:50", "actividad": "Coffee Break", "lugar": "Terraza" },
+  { "dia": "17 de junio", "hora": "10:20", "actividad": "Ponencias RIFED y Docentes UPDS", "lugar": "Salón auditorio" },
+  { "dia": "17 de junio", "hora": "13:00", "actividad": "Almuerzo", "lugar": "Fogón del Gringo" },
+  { "dia": "17 de junio", "hora": "15:00", "actividad": "Mesas Docentes", "lugar": "Aulas de posgrado" }
+]
+  ,
   [ // Día 4 - 18 de junio
     { dia: '18 de junio', hora: '08:00', actividad: 'Movilización de las delegaciones de los Hoteles a la UPDS', lugar: 'Hoteles' },
     { dia: '18 de junio', hora: '09:00', actividad: 'Inicio', lugar: 'Salón auditorio' },
