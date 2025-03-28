@@ -10,7 +10,8 @@ export class HotelsService {
       "name": "Hampton Hotel",
       "location": "Santa Cruz, Bolivia",
       "image": "/assets/hampton.jpg",
-      "description": "Hotel con servicios de calidad y tarifas corporativas.",
+      "description": "Los hoteles ofrecen tarifas exclusivas para asistentes al Encuentro de la Red Iberoamericana de Derecho en la UPDS Domingo Savio, disponibles solo para miembros registrados. Aprovecha esta oportunidad de hospedaje preferencial.
+        ",
       "url": "https://www.hilton.com/es/locations/bolivia/santa-cruz-de-la-sierra/hampton-by-hilton/?content=es", 
       "rooms": [
         {
@@ -49,7 +50,8 @@ export class HotelsService {
       "name": "LP Hoteles",
       "location": "Santa Cruz, Bolivia",
       "image": "/assets/lp.jpg",
-      "description": "Hotel moderno con opciones de hospedaje y salones para eventos.",
+      "description": "Los hoteles ofrecen tarifas exclusivas para asistentes al Encuentro de la Red Iberoamericana de Derecho en la UPDS Domingo Savio, disponibles solo para miembros registrados. Aprovecha esta oportunidad de hospedaje preferencial.
+        ",
       "url": "https://lphoteles.com/lpsantacruz/",
       "rooms": [
         { "type": "Habitación Doble", "capacity": 2, "priceUsd": 377, "totalBs": 75400, "nights": 5, "quantity": 40 },
@@ -106,7 +108,8 @@ export class HotelsService {
       "name": "Swissotel Hotel",
       "location": "Santa Cruz, Bolivia",
       "image": "/assets/Swissotel.jpg",
-      "description": "Hotel de lujo con habitaciones modernas y servicios premium.",
+      "description": "Los hoteles ofrecen tarifas exclusivas para asistentes al Encuentro de la Red Iberoamericana de Derecho en la UPDS Domingo Savio, disponibles solo para miembros registrados. Aprovecha esta oportunidad de hospedaje preferencial.
+        ",
       "url": "https://swissotelsantacruz.com.bo/",  
       "rooms": [
         { "type": "Classic Room", "priceUsd": 60, "priceBs": 417.60, "priceForFourNightsUsd": 240, "priceForFourNightsBs": 1670.40 },
@@ -139,7 +142,8 @@ export class HotelsService {
       "name": "GHotel Santa Cruz",
       "location": "Santa Cruz, Bolivia",
       "image": "/assets/ghotel.jpg",
-      "description": "Hotel elegante con diversas opciones de hospedaje.",
+      "description": "Los hoteles ofrecen tarifas exclusivas para asistentes al Encuentro de la Red Iberoamericana de Derecho en la UPDS Domingo Savio, disponibles solo para miembros registrados. Aprovecha esta oportunidad de hospedaje preferencial.
+        ",
       "url": "https://g-santa-cruz-de-la-sierra.santacruztophotels.com/es/",  
       "rooms": [
         { "type": "Habitación Estándar", "priceBs": 240, "priceUsd": 35, "priceForFourNightsBs": 960, "priceForFourNightsUsd": 137.93 },
