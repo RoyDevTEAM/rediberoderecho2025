@@ -9,7 +9,7 @@ export class HotelsService {
       "id": 1,
       "name": "Hampton Hotel",
       "location": "Santa Cruz, Bolivia",
-      "image": "/assets/hampton.jpg",
+      "image": "assets/IMG-20250419-WA0028.jpg",
       "description": "Los hoteles ofrecen tarifas exclusivas para asistentes al Encuentro de la Red Iberoamericana de Derecho en la UPDS Domingo Savio, disponibles solo para miembros registrados. Aprovecha esta oportunidad de hospedaje preferencial"
       ,
       "url": "https://www.hilton.com/en/hotels/srzeqhx-hampton-santa-cruz-equipetrol-bolivia/?WT.mc_id=zlada0ww1hx2psh3ggl4advbpp5dkt6multibr7_153665317_1003528&gad_source=1&gclid=CjwKCAjwk43ABhBIEiwAvvMEB9DsDX8iSj567Tl1lTj2WytpR9yhnOmZSiY0GP5ppNqWKrF5fsPRWBoCe4gQAvD_BwE&gclsrc=aw.ds", 
