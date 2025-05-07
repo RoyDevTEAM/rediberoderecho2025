@@ -54,9 +54,9 @@ export class HotelsService {
         ,
       "url": "https://lphoteles.com/lpsantacruz/",
       "rooms": [
-        { "type": "Habitación Doble", "capacity": 2, "priceUsd": 377, "totalBs": 75400, "nights": 5, "quantity": 40 },
+        { "type": "Habitación Doble", "capacity": 2, "priceUsd": 53.80, "totalBs": 75400, "nights": 5, "quantity": 40 },
         
-        { "type": "Habitación Superior", "capacity": 2, "priceUsd": 377, "totalBs": 75400, "nights": 5, "quantity": 40 }
+        { "type": "Habitación Superior", "capacity": 2, "priceUsd": 53.80, "totalBs": 75400, "nights": 5, "quantity": 40 }
       ],
       "amenities": [
         "Check-in: 14:30 hrs - Check-out: 12:00 hrs",
