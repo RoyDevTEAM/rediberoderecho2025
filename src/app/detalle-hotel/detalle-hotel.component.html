@@ -2,8 +2,13 @@
 <!-- Contenedor principal con margen superior y estilo claro -->
 <div class="min-h-screen flex flex-col md:flex-row items-start bg-gray-50 pt-16 px-6">
   
+  <!-- Spinner de carga -->
+  <div *ngIf="isLoading" class="w-full flex justify-center items-center py-32">
+    <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-[#003087]"></div>
+  </div>
+  
   <!-- Contenido principal del hotel -->
-  <div *ngIf="hotel" class="bg-white text-gray-800 p-8 rounded-xl shadow-lg w-full max-w-4xl">
+  <div *ngIf="!isLoading && hotel" class="bg-white text-gray-800 p-8 rounded-xl shadow-lg w-full max-w-4xl">
     <!-- Imagen y título -->
     <div class="mb-8">
       <h1 class="text-4xl font-extrabold text-[#003087]">{{ hotel.name }}</h1>
@@ -16,28 +21,164 @@
   
     <!-- Habitaciones o suites -->
     <div *ngIf="hotel.rooms?.length > 0" class="mt-8">
-      <h2 class="text-3xl font-semibold text-[#003087]">Opciones de Habitaciones</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
+      <h2 class="text-3xl font-semibold text-[#003087] mb-4">Opciones de Habitaciones</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4">
         <div *ngFor="let room of hotel.rooms" class="bg-gray-100 p-6 rounded-xl shadow-md hover:shadow-xl transition">
           <h3 class="text-xl font-semibold text-[#00AEEF]">{{ room.type }}</h3>
-          <p class="text-base text-gray-700 mt-2">
-            Precio: 
-            <span *ngIf="room.priceUsd; else noPrice" class="font-semibold text-[#003087]">$ {{ room.priceUsd }}</span>
-            <ng-template #noPrice>
-              <span class="text-red-500">Precio no disponible</span>
-            </ng-template>
+          <p class="text-base text-gray-600 mt-1">
+            <span class="font-medium">Capacidad:</span> {{ room.capacity }}
+          </p>
+          <div class="mt-3 flex flex-col space-y-1">
+            <p class="text-base text-gray-700">
+              <span class="font-medium">Precio USD:</span> 
+              <span class="font-semibold text-[#003087]">${{ room.priceUsd }}</span>
+            </p>
+            <p class="text-base text-gray-700">
+              <span class="font-medium">Precio Bs:</span> 
+              <span class="font-semibold text-[#003087]">Bs. {{ room.priceBs }}</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cargos adicionales -->
+    <div *ngIf="hasExtraCharges()" class="mt-8">
+      <h2 class="text-3xl font-semibold text-[#003087] mb-4">Cargos Adicionales</h2>
+      <div class="bg-yellow-50 p-6 rounded-xl shadow-md">
+        <ul class="space-y-2">
+          <li *ngIf="hotel.extraCharges.child3to12Usd">
+            <span class="font-medium">Niños (3-12 años):</span> ${{ hotel.extraCharges.child3to12Usd }} USD
+          </li>
+          <li *ngIf="hotel.extraCharges.child13to17Usd">
+            <span class="font-medium">Menores (13-17 años):</span> ${{ hotel.extraCharges.child13to17Usd }} USD
+          </li>
+          <li *ngIf="hotel.extraCharges.thirdAdultUsd">
+            <span class="font-medium">Tercer adulto en habitación:</span> ${{ hotel.extraCharges.thirdAdultUsd }} USD
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Información de servicios y amenidades -->
+    <div *ngIf="hotel.amenities?.length > 0" class="mt-8">
+      <h2 class="text-3xl font-semibold text-[#003087] mb-4">Servicios Incluidos</h2>
+      <div class="bg-green-50 p-6 rounded-xl shadow-md">
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <li *ngFor="let amenity of hotel.amenities" class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-600 mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <span>{{ amenity }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Políticas del hotel -->
+    <div *ngIf="hotel.policies" class="mt-8">
+      <h2 class="text-3xl font-semibold text-[#003087] mb-4">Políticas del Hotel</h2>
+      <div class="bg-blue-50 p-6 rounded-xl shadow-md">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div *ngIf="hotel.policies.checkIn">
+            <h3 class="text-lg font-semibold text-[#00AEEF]">Check-In</h3>
+            <p class="mt-1">{{ hotel.policies.checkIn }}</p>
+          </div>
+          <div *ngIf="hotel.policies.checkOut">
+            <h3 class="text-lg font-semibold text-[#00AEEF]">Check-Out</h3>
+            <p class="mt-1">{{ hotel.policies.checkOut }}</p>
+          </div>
+          <div *ngIf="hotel.policies.payment">
+            <h3 class="text-lg font-semibold text-[#00AEEF]">Pago</h3>
+            <p class="mt-1">{{ hotel.policies.payment }}</p>
+          </div>
+          <div *ngIf="hotel.policies.cancellation">
+            <h3 class="text-lg font-semibold text-[#00AEEF]">Cancelación</h3>
+            <p class="mt-1">{{ hotel.policies.cancellation }}</p>
+          </div>
+          <div *ngIf="hotel.policies.lateCheckOut">
+            <h3 class="text-lg font-semibold text-[#00AEEF]">Late Check-Out</h3>
+            <p class="mt-1">{{ hotel.policies.lateCheckOut }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Información de pago -->
+    <div *ngIf="hasPaymentInfo()" class="mt-8">
+      <h2 class="text-3xl font-semibold text-[#003087] mb-4">Información de Pago</h2>
+      <div class="bg-purple-50 p-6 rounded-xl shadow-md">
+        <p *ngIf="hotel.paymentInfo.bank"><span class="font-medium">Banco:</span> {{ hotel.paymentInfo.bank }}</p>
+        <p *ngIf="hotel.paymentInfo.accountNumber"><span class="font-medium">Número de cuenta:</span> {{ hotel.paymentInfo.accountNumber }}</p>
+        <p *ngIf="hotel.paymentInfo.accountName"><span class="font-medium">A nombre de:</span> {{ hotel.paymentInfo.accountName }}</p>
+      </div>
+    </div>
+
+    <!-- Servicio de transfer -->
+    <div *ngIf="hasTransferInfo()" class="mt-8">
+      <h2 class="text-3xl font-semibold text-[#003087] mb-4">Servicio de Transfer</h2>
+      <div class="bg-indigo-50 p-6 rounded-xl shadow-md">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div *ngIf="hotel.transfer.auto">
+            <h3 class="text-lg font-semibold text-[#00AEEF]">Auto</h3>
+            <p class="mt-1"><span class="font-medium">Capacidad:</span> {{ hotel.transfer.auto.capacity }}</p>
+            <p class="mt-1"><span class="font-medium">Precio:</span> ${{ hotel.transfer.auto.priceUsd }} USD</p>
+          </div>
+          <div *ngIf="hotel.transfer.van">
+            <h3 class="text-lg font-semibold text-[#00AEEF]">Van</h3>
+            <p class="mt-1"><span class="font-medium">Capacidad:</span> {{ hotel.transfer.van.capacity }}</p>
+            <p class="mt-1"><span class="font-medium">Precio:</span> ${{ hotel.transfer.van.priceUsd }} USD</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Protocolos de bioseguridad -->
+    <div *ngIf="hasBiosecurityProtocols()" class="mt-8">
+      <h2 class="text-3xl font-semibold text-[#003087] mb-4">Protocolos de Bioseguridad</h2>
+      <div class="bg-red-50 p-6 rounded-xl shadow-md">
+        <ul class="space-y-2">
+          <li *ngFor="let protocol of hotel.biosecurityProtocols" class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-600 mr-2 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clip-rule="evenodd" />
+            </svg>
+            <span>{{ protocol }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Información de contacto -->
+    <div *ngIf="hasContactInfo()" class="mt-8">
+      <h2 class="text-3xl font-semibold text-[#003087] mb-4">Contacto</h2>
+      <div class="bg-gray-100 p-6 rounded-xl shadow-md">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <p *ngIf="hotel.contact.phone">
+            <span class="font-medium">Teléfono:</span> {{ hotel.contact.phone }}
+          </p>
+          <p *ngIf="hotel.contact.mobile">
+            <span class="font-medium">Celular:</span> {{ hotel.contact.mobile }}
+          </p>
+          <p *ngIf="hotel.contact.whatsapp">
+            <span class="font-medium">WhatsApp:</span> {{ hotel.contact.whatsapp }}
+          </p>
+          <p *ngIf="hotel.contact.email">
+            <span class="font-medium">Email:</span> {{ hotel.contact.email }}
+          </p>
+          <p *ngIf="hotel.contact.address" class="md:col-span-2">
+            <span class="font-medium">Dirección:</span> {{ hotel.contact.address }}
           </p>
         </div>
       </div>
     </div>
 
     <!-- Nota sobre la red iberoamericana -->
-    <p class="text-center text-sm text-gray-700 mt-6">
-      * Para reservar hotel debe indicar que es parte de la Red Iberoamericana para acceder al precio preferencial.
+    <p class="text-center text-base font-medium text-red-600 mt-8 p-4 bg-red-50 rounded-lg">
+      Para reservar hotel debe indicar que es parte de la Red Iberoamericana para acceder al precio preferencial.
     </p>
 
     <!-- Botón de Ir al sitio oficial -->
-    <div class="mt-4 flex justify-center">
+    <div class="mt-8 flex justify-center">
       <a [href]="hotel.url" target="_blank"
          class="inline-block bg-[#00AEEF] text-white px-8 py-3 rounded-lg shadow-lg hover:bg-[#003087] transition duration-300 transform hover:scale-105">
         Ir al sitio oficial
@@ -46,7 +187,7 @@
     
     <!-- Botón de regreso -->
     <div class="mt-6 flex justify-center">
-      <a routerLink="hoteles"
+      <a routerLink="/hoteles"
          class="inline-block bg-[#003087] text-white px-8 py-3 rounded-lg shadow-lg hover:bg-[#00AEEF] transition duration-300 transform hover:scale-105">
         Regresar a la lista de hoteles
       </a>
@@ -57,40 +198,24 @@
   <div class="bg-white rounded-xl shadow-lg p-6 mt-8 md:mt-0 md:ml-6 w-full md:w-80 flex-shrink-0">
     <h3 class="text-2xl font-bold text-center text-[#003087] mb-4">Transporte en Santa Cruz</h3>
     
-    <!-- App Yango -->
-    <div class="mb-8 bg-yellow-50 p-4 rounded-lg">
+    <!-- Apps de transporte -->
+    <div *ngFor="let app of transportApps; let last = last" 
+        [class]="'mb-6 p-4 rounded-lg ' + (app.name === 'Yango' ? 'bg-yellow-50' : 'bg-blue-50')">
       <div class="flex items-center justify-between mb-3">
-        <h4 class="text-xl font-semibold">Yango</h4>
-        <img src="assets/yango.png" alt="Yango Logo" class="h-10" onerror="this.src='https://placehold.co/100x100?text=Yango'">
+        <h4 class="text-xl font-semibold">{{ app.name }}</h4>
+        <img [src]="app.logo" [alt]="app.name + ' Logo'" class="h-10" (error)="handleImageError($event, app.name)">
       </div>
-      <p class="text-gray-700 mb-4">Transporte rápido y seguro en Santa Cruz. ¡Viaja con comodidad!</p>
+      <p class="text-gray-700 mb-4">{{ app.description }}</p>
       <div class="flex justify-center space-x-4">
-        <a href="https://play.google.com/store/apps/details?id=com.yandex.taxi" target="_blank" class="bg-black text-white px-3 py-2a rounded-lg flex items-center">
+        <a [href]="app.androidUrl" target="_blank" class="bg-black text-white px-3 py-2 rounded-lg flex items-center">
           <i class="fab fa-google-play mr-2"></i> Android
         </a>
-        <a href="https://apps.apple.com/app/yango/id1321291737" target="_blank" class="bg-black text-white px-3 py-2 rounded-lg flex items-center">
+        <a [href]="app.iosUrl" target="_blank" class="bg-black text-white px-3 py-2 rounded-lg flex items-center">
           <i class="fab fa-apple mr-2"></i> iOS
         </a>
       </div>
     </div>
     
-    <!-- App InDrive -->
-    <div class="bg-blue-50 p-4 rounded-lg">
-      <div class="flex items-center justify-between mb-3">
-        <h4 class="text-xl font-semibold">InDrive</h4>
-        <img src="assets/inDrive.png" alt="InDrive Logo" class="h-10" onerror="this.src='https://placehold.co/100x100?text=InDrive'">
-      </div>
-      <p class="text-gray-700 mb-4">Tarifa justa, tú decides cuánto pagar. Viaja de forma económica.</p>
-      <div class="flex justify-center space-x-4">
-        <a href="https://play.google.com/store/apps/details?id=sinet.startup.inDriver" target="_blank" class="bg-black text-white px-3 py-2 rounded-lg flex items-center">
-          <i class="fab fa-google-play mr-2"></i> Android
-        </a>
-        <a href="https://apps.apple.com/app/indrive-ride-hailing-app/id881766201" target="_blank" class="bg-black text-white px-3 py-2 rounded-lg flex items-center">
-          <i class="fab fa-apple mr-2"></i> iOS
-        </a>
-      </div>
-    </div>
-
     <!-- Información adicional -->
     <div class="mt-6 p-4 bg-gray-100 rounded-lg">
       <h4 class="font-semibold mb-2">Recomendación Local</h4>
