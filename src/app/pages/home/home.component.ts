@@ -65,7 +65,7 @@ agenda: { dia: string; hora: string; actividad: string; lugar: string; }[][] = [
     { dia: '16 de junio', hora: '07:45', actividad: 'Movilización de las delegaciones de los Hoteles a la UPDS', lugar: 'Hoteles' },
     { dia: '16 de junio', hora: '09:00', actividad: 'Inauguración del Encuentro', lugar: 'Salón auditorio' },
     { dia: '16 de junio', hora: '09:15', actividad: 'Conferencia Magistral - Invitado especial nacional', lugar: 'Auditorio Principal' },
-    { dia: '16 de junio', hora: '09:40', actividad: 'Coctel Inaugural', lugar: 'Galería CECID' },
+    { dia: '16 de junio', hora: '09:40', actividad: 'coffe Break', lugar: 'Galería CECID' },
     { dia: '16 de junio', hora: '10:15', actividad: 'Ponencias RIFED', lugar: 'Salón auditorio' },
     { dia: '16 de junio', hora: '12:00', actividad: 'Transición de IBEROJURIS', lugar: 'Auditorio' },
     { dia: '16 de junio', hora: '13:30', actividad: 'Refrigerio (Pernil)', lugar: 'UPDS' },
