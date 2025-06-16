@@ -50,7 +50,7 @@ modalData: any = {
       fecha: '15 de Mayo, 2024'
     },
     {
-      url: 'assets/images/galeria/evento2.jpg',
+      url: 'assets/Prueba.jpg',
       titulo: 'Mesa Redonda Principal',
       descripcion: 'Debate sobre Derechos Humanos en Latinoamérica',
       fecha: '16 de Mayo, 2024'
