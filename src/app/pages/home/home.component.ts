@@ -1,8 +1,8 @@
-import { Component,OnInit } from '@angular/core';
+import {OnInit } from '@angular/core';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { HotelsService } from '../../services/hoteles.service';
-
+import { Component, HostListener } from '@angular/core';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -35,7 +35,130 @@ modalData: any = {
   policies: []
 }
 
+ galeriaVisible: boolean = false; // Cambiar a true para mostrar la galería
 
+  // Control del modal
+  modalAbierto: boolean = false;
+  imagenActual: number = 0;
+
+  // Array de imágenes de la galería
+  imagenesGaleria = [
+    {
+      url: 'assets/images/galeria/evento1.jpg',
+      titulo: 'Ceremonia de Inauguración',
+      descripcion: 'Momento de la apertura oficial del XII Encuentro en México',
+      fecha: '15 de Mayo, 2024'
+    },
+    {
+      url: 'assets/images/galeria/evento2.jpg',
+      titulo: 'Mesa Redonda Principal',
+      descripcion: 'Debate sobre Derechos Humanos en Latinoamérica',
+      fecha: '16 de Mayo, 2024'
+    },
+    {
+      url: 'assets/images/galeria/evento3.jpg',
+      titulo: 'Networking Académico',
+      descripción: 'Espacio de intercambio entre participantes',
+      fecha: '16 de Mayo, 2024'
+    },
+    {
+      url: 'assets/images/galeria/evento4.jpg',
+      titulo: 'Conferencia Magistral',
+      descripcion: 'Dr. Antonio García sobre Derecho Constitucional',
+      fecha: '17 de Mayo, 2024'
+    },
+    {
+      url: 'assets/images/galeria/evento5.jpg',
+      titulo: 'Taller de Estudiantes',
+      descripcion: 'Actividad práctica sobre resolución de casos',
+      fecha: '17 de Mayo, 2024'
+    },
+    {
+      url: 'assets/images/galeria/evento6.jpg',
+      titulo: 'Cena de Gala',
+      descripcion: 'Celebración de clausura del encuentro',
+      fecha: '18 de Mayo, 2024'
+    },
+    {
+      url: 'assets/images/galeria/evento7.jpg',
+      titulo: 'Visita Cultural',
+      descripcion: 'Recorrido por el centro histórico de la ciudad sede',
+      fecha: '18 de Mayo, 2024'
+    },
+    {
+      url: 'assets/images/galeria/evento8.jpg',
+      titulo: 'Entrega de Certificados',
+      descripcion: 'Ceremonia de reconocimiento a participantes',
+      fecha: '18 de Mayo, 2024'
+    },
+    {
+      url: 'assets/images/galeria/evento9.jpg',
+      titulo: 'Foto Grupal',
+      descripcion: 'Todos los participantes del XII Encuentro',
+      fecha: '18 de Mayo, 2024'
+    },
+    {
+      url: 'assets/images/galeria/evento10.jpg',
+      titulo: 'Sede Universidad',
+      descripcion: 'Vista del campus donde se realizó el evento',
+      fecha: '15 de Mayo, 2024'
+    },
+    {
+      url: 'assets/images/galeria/evento11.jpg',
+      titulo: 'Panel de Expertos',
+      descripcion: 'Discusión sobre reforma judicial en Iberoamérica',
+      fecha: '16 de Mayo, 2024'
+    },
+    {
+      url: 'assets/images/galeria/evento12.jpg',
+      titulo: 'Presentación de Proyectos',
+      descripcion: 'Estudiantes presentando sus investigaciones',
+      fecha: '17 de Mayo, 2024'
+    }
+  ];
+
+  // Métodos para la galería
+  abrirModal(index: number): void {
+    this.imagenActual = index;
+    this.modalAbierto = true;
+    // Prevenir scroll del body cuando el modal está abierto
+    document.body.style.overflow = 'hidden';
+  }
+
+  cerrarModal(): void {
+    this.modalAbierto = false;
+    document.body.style.overflow = 'auto';
+  }
+
+  navegarImagen(direccion: number): void {
+    const nuevoIndice = this.imagenActual + direccion;
+    if (nuevoIndice >= 0 && nuevoIndice < this.imagenesGaleria.length) {
+      this.imagenActual = nuevoIndice;
+    }
+  }
+
+  // Método para alternar visibilidad (opcional, para testing)
+  toggleGaleria(): void {
+    this.galeriaVisible = !this.galeriaVisible;
+  }
+
+  // Manejar teclas del modal (opcional)
+  @HostListener('document:keydown', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent) {
+    if (this.modalAbierto) {
+      switch (event.key) {
+        case 'Escape':
+          this.cerrarModal();
+          break;
+        case 'ArrowLeft':
+          this.navegarImagen(-1);
+          break;
+        case 'ArrowRight':
+          this.navegarImagen(1);
+          break;
+      }
+    }
+  }
 
   events = [
     {
