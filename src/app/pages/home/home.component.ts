@@ -297,9 +297,12 @@ cambiarDia(diaIndex: number) {
   }
 
   images: string[] = [
+
+    'https://github.com/RoyDevTEAM/QueryImg/raw/main/02.jpg',
     '/assets/fondo1.jpg',
     '/assets/IMG-20250228-WA0037.jpg',
-    '/assets/IMG-20250228-WA0038.jpg'
+    '/assets/IMG-20250228-WA0038.jpg',
+    
   ];
 
   currentIndex: number = 0;
