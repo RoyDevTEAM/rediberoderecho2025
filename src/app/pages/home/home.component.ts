@@ -92,19 +92,19 @@ modalData: any = {
       fecha: '17 de Mayo, 2024'
     },
     {
-      url: 'assets/images/galeria/evento9.jpg',
+      url: 'assets/Jurista peruano alerta sobre detenciones injustificadas en casos mediáticos.jpg',
       titulo: 'Foto Grupal',
       descripcion: 'Todos los participantes del XII Encuentro',
       fecha: '18 de Mayo, 2024'
     },
     {
-      url: 'assets/images/galeria/evento10.jpg',
+      url: 'assets/Jurista portuguesa advierte sobre el avance de sistemas algorítmicos.jpg',
       titulo: 'Sede Universidad',
       descripcion: 'Vista del campus donde se realizó el evento',
       fecha: '15 de Mayo, 2024'
     },
     {
-      url: 'assets/images/galeria/evento11.jpg',
+      url: 'assets/Experto peruano propone una nueva tipología basada en la teoría tridimensional del Derecho.jpg',
       titulo: 'Panel de Expertos',
       descripcion: 'Discusión sobre reforma judicial en Iberoamérica',
       fecha: '16 de Mayo, 2024'
