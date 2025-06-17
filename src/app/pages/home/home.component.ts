@@ -47,7 +47,7 @@ modalData: any = {
       url: 'assets/Ceremonia de Inauguración.jfif',
       titulo: 'Ceremonia de Inauguración',
       descripcion: 'Momento de la apertura oficial del XII Encuentro en México',
-      fecha: '15 de Mayo, 2024'
+      fecha: '16 de Mayo, 2024'
     },
     {
       url: 'assets/Experto peruano propone una nueva tipología basada en la teoría tridimensional del Derecho.jpg',
@@ -68,28 +68,28 @@ modalData: any = {
       fecha: '17 de Mayo, 2024'
     },
     {
-      url: 'assets/images/galeria/evento5.jpg',
+      url: 'assets/ponencia1.jfif',
       titulo: 'Taller de Estudiantes',
       descripcion: 'Actividad práctica sobre resolución de casos',
       fecha: '17 de Mayo, 2024'
     },
     {
-      url: 'assets/images/galeria/evento6.jpg',
+      url: 'assets/ponencia2.jfif',
       titulo: 'Cena de Gala',
       descripcion: 'Celebración de clausura del encuentro',
-      fecha: '18 de Mayo, 2024'
+      fecha: '17 de Mayo, 2024'
     },
     {
-      url: 'assets/images/galeria/evento7.jpg',
+      url: 'assets/ponencia3.jfif',
       titulo: 'Visita Cultural',
       descripcion: 'Recorrido por el centro histórico de la ciudad sede',
-      fecha: '18 de Mayo, 2024'
+      fecha: '17 de Mayo, 2024'
     },
     {
-      url: 'assets/images/galeria/evento8.jpg',
+      url: 'assets/ponencia4.jfif',
       titulo: 'Entrega de Certificados',
       descripcion: 'Ceremonia de reconocimiento a participantes',
-      fecha: '18 de Mayo, 2024'
+      fecha: '17 de Mayo, 2024'
     },
     {
       url: 'assets/images/galeria/evento9.jpg',
