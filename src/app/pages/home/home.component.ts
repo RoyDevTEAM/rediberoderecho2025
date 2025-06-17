@@ -45,15 +45,15 @@ modalData: any = {
   imagenesGaleria = [
     {
       url: 'assets/Ceremonia de Inauguración.jfif',
-      titulo: 'Ceremonia de Inauguración',
-      descripcion: 'Momento de la apertura oficial del XII Encuentro en México',
-      fecha: '16 de Mayo, 2024'
+      titulo: '',
+      descripcion: '',
+      fecha: ''
     },
     {
       url: 'assets/Experto peruano propone una nueva tipología basada en la teoría tridimensional del Derecho.jpg',
-      titulo: 'Ponencia',
-      descripcion: 'Experto peruano propone una nueva tipología basada en la teoría tridimensional del Derecho',
-      fecha: '16 de Mayo, 2024'
+      titulo: '',
+      descripcion: '',
+      fecha: ''
     },
     {
       url: 'assets/Especialista en Derecho electoral y Tecnología advierte sobre los desafíos del voto electrónico en contextos democráticos.jpg',
