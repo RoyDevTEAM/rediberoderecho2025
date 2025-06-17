@@ -50,9 +50,9 @@ modalData: any = {
       fecha: '15 de Mayo, 2024'
     },
     {
-      url: 'assets/Prueba.jpg',
+      url: 'assets/Experto peruano propone una nueva tipología basada en la teoría tridimensional del Derecho.jpg',
       titulo: 'Mesa Redonda Principal',
-      descripcion: 'Debate sobre Derechos Humanos en Latinoamérica',
+      descripcion: 'Experto peruano propone una nueva tipología basada en la teoría tridimensional del Derecho',
       fecha: '16 de Mayo, 2024'
     },
     {
