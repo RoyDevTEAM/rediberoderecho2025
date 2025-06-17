@@ -110,7 +110,7 @@ modalData: any = {
       fecha: '16 de Mayo, 2024'
     },
     {
-      url: 'assets/images/galeria/evento12.jpg',
+      url: 'assets/ponencia6.jpg',
       titulo: 'Presentación de Proyectos',
       descripcion: 'Estudiantes presentando sus investigaciones',
       fecha: '17 de Mayo, 2024'
