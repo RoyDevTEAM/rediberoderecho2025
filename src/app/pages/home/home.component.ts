@@ -35,7 +35,7 @@ modalData: any = {
   policies: []
 }
 
- galeriaVisible: boolean = true; // Cambiar a true para mostrar la galería
+ galeriaVisible: boolean = false; // Cambiar a true para mostrar la galería
 
   // Control del modal
   modalAbierto: boolean = false;
