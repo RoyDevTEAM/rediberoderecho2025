@@ -297,7 +297,7 @@ cambiarDia(diaIndex: number) {
   }
 
   images: string[] = [
-    'assets/Ceremonia de Inauguración.jfif',
+    '/assets/fondo1.jpg',
     '/assets/IMG-20250228-WA0037.jpg',
     '/assets/IMG-20250228-WA0038.jpg'
   ];
