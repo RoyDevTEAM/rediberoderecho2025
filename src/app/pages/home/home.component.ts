@@ -57,63 +57,63 @@ modalData: any = {
     },
     {
       url: 'assets/Especialista en Derecho electoral y Tecnología advierte sobre los desafíos del voto electrónico en contextos democráticos.jpg',
-      titulo: 'Ponencia',
+      titulo: '',
       descripción: '',
-      fecha: '16 de Mayo, 2024'
+      fecha: ''
     },
     {
       url: 'assets/EntregaDeCertificados.jfif',
-      titulo: 'Entrega de Certificados',
+      titulo: '',
       descripcion: '',
-      fecha: '17 de Mayo, 2024'
+      fecha: ''
     },
     {
       url: 'assets/ponencia1.jfif',
-      titulo: 'Ponencia',
+      titulo: '',
       descripcion: '',
-      fecha: '17 de Mayo, 2024'
+      fecha: ''
     },
     {
       url: 'assets/ponencia2.jfif',
-      titulo: 'Ponencia',
+      titulo: '',
       descripcion: '',
-      fecha: '17 de Mayo, 2024'
+      fecha: ''
     },
     {
       url: 'assets/ponencia3.jfif',
-      titulo: 'Ponencia',
+      titulo: '',
       descripcion: '',
-      fecha: '17 de Mayo, 2024'
+      fecha: ''
     },
     {
       url: 'assets/ponencia4.jfif',
-      titulo: 'Ponencia',
+      titulo: '',
       descripcion: '',
-      fecha: '17 de Mayo, 2024'
+      fecha: ''
     },
     {
       url: 'assets/Jurista peruano alerta sobre detenciones injustificadas en casos mediáticos.jpg',
-      titulo: 'Foto Grupal',
-      descripcion: 'Todos los participantes del XII Encuentro',
-      fecha: '18 de Mayo, 2024'
+      titulo: '',
+      descripcion: '',
+      fecha: ''
     },
     {
       url: 'assets/Jurista portuguesa advierte sobre el avance de sistemas algorítmicos.jpg',
-      titulo: 'Sede Universidad',
-      descripcion: 'Vista del campus donde se realizó el evento',
-      fecha: '15 de Mayo, 2024'
+      titulo: '',
+      descripcion: '',
+      fecha: ''
     },
     {
       url: 'assets/Experto peruano propone una nueva tipología basada en la teoría tridimensional del Derecho.jpg',
-      titulo: 'Panel de Expertos',
-      descripcion: 'Discusión sobre reforma judicial en Iberoamérica',
-      fecha: '16 de Mayo, 2024'
+      titulo: '',
+      descripcion: '',
+      fecha: ''
     },
     {
       url: 'assets/ponencia6.jpg',
-      titulo: 'Presentación de Proyectos',
-      descripcion: 'Estudiantes presentando sus investigaciones',
-      fecha: '17 de Mayo, 2024'
+      titulo: '',
+      descripcion: '',
+      fecha: ''
     }
   ];
 
