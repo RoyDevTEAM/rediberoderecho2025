@@ -58,13 +58,13 @@ modalData: any = {
     {
       url: 'assets/Especialista en Derecho electoral y Tecnología advierte sobre los desafíos del voto electrónico en contextos democráticos.jpg',
       titulo: 'Ponencia',
-      descripción: 'Especialista en Derecho electoral y Tecnología advierte sobre los desafíos del voto electrónico en contextos democráticos',
+      descripción: '',
       fecha: '16 de Mayo, 2024'
     },
     {
-      url: 'assets/images/galeria/evento4.jpg',
-      titulo: 'Conferencia Magistral',
-      descripcion: 'Dr. Antonio García sobre Derecho Constitucional',
+      url: 'assets/EntregaDeCertificados.jfif',
+      titulo: 'Entrega de Certificados',
+      descripcion: '',
       fecha: '17 de Mayo, 2024'
     },
     {
