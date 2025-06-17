@@ -51,14 +51,14 @@ modalData: any = {
     },
     {
       url: 'assets/Experto peruano propone una nueva tipología basada en la teoría tridimensional del Derecho.jpg',
-      titulo: 'Mesa Redonda Principal',
+      titulo: 'Ponencia',
       descripcion: 'Experto peruano propone una nueva tipología basada en la teoría tridimensional del Derecho',
       fecha: '16 de Mayo, 2024'
     },
     {
-      url: 'assets/images/galeria/evento3.jpg',
-      titulo: 'Networking Académico',
-      descripción: 'Espacio de intercambio entre participantes',
+      url: 'assets/Especialista en Derecho electoral y Tecnología advierte sobre los desafíos del voto electrónico en contextos democráticos.jpg',
+      titulo: 'Ponencia',
+      descripción: 'Especialista en Derecho electoral y Tecnología advierte sobre los desafíos del voto electrónico en contextos democráticos',
       fecha: '16 de Mayo, 2024'
     },
     {
