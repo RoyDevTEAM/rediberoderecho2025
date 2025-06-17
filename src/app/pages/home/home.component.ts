@@ -44,7 +44,7 @@ modalData: any = {
   // Array de imágenes de la galería
   imagenesGaleria = [
     {
-      url: 'assets/29-La-justicia-constitucional-como-limite-a-la-discrecionalidad-judicial_-el-caso-de-la-primera-sentencia-de-avocacion-en-Bolivia-1024x577.jpg.webp',
+      url: 'assets/Ceremonia de Inauguración.jfif',
       titulo: 'Ceremonia de Inauguración',
       descripcion: 'Momento de la apertura oficial del XII Encuentro en México',
       fecha: '15 de Mayo, 2024'
