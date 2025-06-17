@@ -44,7 +44,7 @@ modalData: any = {
   // Array de imágenes de la galería
   imagenesGaleria = [
     {
-      url: 'assets/Ceremonia de Inauguración.jfif',
+      url: 'assets/images/galeria/evento3.jpg',
       titulo: 'Ceremonia de Inauguración',
       descripcion: 'Momento de la apertura oficial del XII Encuentro en México',
       fecha: '15 de Mayo, 2024'
