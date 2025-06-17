@@ -70,25 +70,25 @@ modalData: any = {
     {
       url: 'assets/ponencia1.jfif',
       titulo: 'Taller de Estudiantes',
-      descripcion: 'Actividad práctica sobre resolución de casos',
+      descripcion: '',
       fecha: '17 de Mayo, 2024'
     },
     {
       url: 'assets/ponencia2.jfif',
       titulo: 'Cena de Gala',
-      descripcion: 'Celebración de clausura del encuentro',
+      descripcion: '',
       fecha: '17 de Mayo, 2024'
     },
     {
       url: 'assets/ponencia3.jfif',
       titulo: 'Visita Cultural',
-      descripcion: 'Recorrido por el centro histórico de la ciudad sede',
+      descripcion: '',
       fecha: '17 de Mayo, 2024'
     },
     {
       url: 'assets/ponencia4.jfif',
       titulo: 'Entrega de Certificados',
-      descripcion: 'Ceremonia de reconocimiento a participantes',
+      descripcion: '',
       fecha: '17 de Mayo, 2024'
     },
     {
